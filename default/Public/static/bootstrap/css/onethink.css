@@ -4,7 +4,8 @@ body > .navbar {margin-bottom: 0;}
 .brand img {margin-top: 30px; margin-left: 20px; width: 133px; height: 74px;}
 .navbar-inner {border-radius: 0; border: 0px; background-image: none; background-color: white; }
 .navbar .nav > li {line-height: 164px;}
-.navbar .nav > li > a {font-size: 20px; font-family: '微软雅黑'; text-shadow: 0 0;}
+.navbar .nav > li > a {font-size: 20px; font-family: '微软雅黑'; text-shadow: 0 0; color: #016b07;}
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover { color: #c30d23;}
 .jumbotron {
     color: #fff;
     text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
