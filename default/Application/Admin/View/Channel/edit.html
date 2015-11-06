@@ -56,7 +56,7 @@
 		<div class="form-item">
 			<label class="item-label">添加简介<span class="check-tips">（二级导航可显示）</span></label>
 			<div class="controls">
-				<textarea name="description">{$info.description}</textarea>
+				<textarea name="description" class="input-large text" style="height: 60px">{$info.description}</textarea>
 			</div>
 		</div>
 		<div class="form-item">
@@ -74,10 +74,10 @@
 <script type="text/javascript" src="__JS__/ajaxfileupload.js"></script>
 <script type="text/javascript">
 	$(function(){
-		$('#uploadPic').change(function(){
-			$.ajaxFileUpload
-            ({
-                url: '{:U('Admin/Upload/pic')}', //用于文件上传的服务器端请求地址
+		$('#file1').change(function(){
+			alert(1);
+			$.ajaxFileUpload ({
+                url: '{:U("Admin/Upload/pic")}', //用于文件上传的服务器端请求地址
                 secureuri: false, //是否需要安全协议，一般设置为false
                 fileElementId: 'file1', //文件上传域的ID
                 dataType: 'json', //返回值类型 一般设置为json
