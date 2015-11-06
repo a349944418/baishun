@@ -21,9 +21,8 @@ class ChannelController extends AdminController {
      * @author 麦当苗儿 <zuojiazi@vip.qq.com>
      */
     public function index(){
-        $pid = i('get.pid', 0);
         /* 获取频道列表 */
-        $map  = array('status' => array('gt', -1), 'pid'=>$pid);
+        $map  = array('status' => array('gt', -1));
         $list = M('Channel')->where($map)->order('sort asc,id asc')->select();
 
         $this->assign('list', $list);
