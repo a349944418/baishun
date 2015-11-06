@@ -86,7 +86,8 @@
                         if (data.error != '') {
                             alert(data.error);
                         } else {
-                        	$("#img1").attr("src", Think.PUBLIC+'/'+data.imgurl).css('display', 'block');
+
+                        	$("#img1").attr("src", '/Uploads/'+data.imgurl).css('display', 'block');
                         	$('input[name="pic"]').val(data.imgurl);
                         }
                     }
