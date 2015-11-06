@@ -30,8 +30,8 @@ class UploadController extends AdminController
 	    if(!$info) {// 上传错误提示错误信息
 	        $return['error'] = $upload->getError();
 	    }else{// 上传成功
-	    	dump($info);
-	        $return['imgurl'] = $info['savepath'].$info['savename'];
+	    	//dump($info);
+	        $return['imgurl'] = $info['file']['savepath'].$info['file']['savename'];
 	    }
 	    echo json_encode($return);
 	}
