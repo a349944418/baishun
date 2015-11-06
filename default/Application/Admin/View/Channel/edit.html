@@ -12,7 +12,7 @@
 			<div class="controls">
 				<select name="pid">
 					<option value="0" >无</option>
-					<foreach name="nav" id="v">
+					<foreach name="nav" item="v">
 						<option value="{$v.id}" <if condition="$info.pid eq $v[id]">selected</if> >{$v.title}</option>
 					</foreach>
 				</select>
