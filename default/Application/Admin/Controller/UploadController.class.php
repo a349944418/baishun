@@ -28,7 +28,7 @@ class UploadController extends AdminController
 	    // 上传文件 
 	    $info   =   $upload->upload();
 	    if(!$info) {// 上传错误提示错误信息
-	        $return['error'] = $upload->getError());
+	        $return['error'] = $upload->getError();
 	    }else{// 上传成功
 	        $return['imgurl'] = $info['savename'];
 	    }
