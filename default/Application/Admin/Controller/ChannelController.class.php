@@ -53,14 +53,18 @@ class ChannelController extends AdminController {
                 $this->error($Channel->getError());
             }
         } else {
-            $pid = i('get.pid', 0);
-            //获取父导航
-            if(!empty($pid)){
-                $parent = M('Channel')->where(array('id'=>$pid))->field('title')->find();
-                $this->assign('parent', $parent);
-            }
+            /*
+                $pid = i('get.pid', 0);
+                //获取父导航
+                if(!empty($pid)){
+                    $parent = M('Channel')->where(array('id'=>$pid))->field('title')->find();
+                    $this->assign('parent', $parent);
+                }
 
-            $this->assign('pid', $pid);
+                $this->assign('pid', $pid);
+            */
+            $nav = M('Channel')->where('pid=0')->field('title, id')->select();
+            $this->assign('nav', $nav);
             $this->assign('info',null);
             $this->meta_title = '新增导航';
             $this->display('edit');

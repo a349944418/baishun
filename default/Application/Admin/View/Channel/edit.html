@@ -4,13 +4,20 @@
 	<div class="main-title">
 		<h2>
 			{$info['id']?'编辑':'新增'}导航
-			<notempty name="pid">
-				[&nbsp;父导航：<a href="{:U('index','pid='.$pid)}">{$parent.title}</a>&nbsp;]
-			</notempty>
 		</h2>
 	</div>
 	<form action="{:U()}" method="post" class="form-horizontal">
-		<input type="hidden" name="pid" value="{$pid}">
+		<div class="form-item">
+			<label class="item-label">选择上级导航</label>
+			<div class="controls">
+				<select name="pid">
+					<option value="0" >无</option>
+					<foreach name="nav" id="v">
+						<option value="{$v.id}" <if condition="$info.pid eq $v[id]">selected</if> >{$v.title}</option>
+					</foreach>
+				</select>
+			</div>
+		</div>
 		<div class="form-item">
 			<label class="item-label">导航标题<span class="check-tips">（用于显示的文字）</span></label>
 			<div class="controls">
@@ -39,6 +46,20 @@
 			</div>
 		</div>
 		<div class="form-item">
+			<label class="item-label">上传图片<span class="check-tips">（二级导航可显示）</span></label>
+			<div class="controls">
+				<input type="file" id="file1" name="file"><br />
+				<img id="img1" src="{$info.pic}" <if condition="$info[pic] eq ''">style="display:none"</if> />
+			</div>
+			<input type="hidden" name="pic" value="{$info.pic}" >
+		</div>
+		<div class="form-item">
+			<label class="item-label">添加简介<span class="check-tips">（二级导航可显示）</span></label>
+			<div class="controls">
+				<textarea name="description">{$info.description}</textarea>
+			</div>
+		</div>
+		<div class="form-item">
 			<input type="hidden" name="id" value="{$info.id|default=''}">
 			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
 			<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
@@ -49,5 +70,34 @@
 <script type="text/javascript" charset="utf-8">
 	//导航高亮
 	highlight_subnav('{:U('index')}');
+</script>
+<script type="text/javascript" src="__JS__/ajaxfileupload.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#uploadPic').change(function(){
+			$.ajaxFileUpload
+            ({
+                url: '{:U('Admin/Upload/pic')}', //用于文件上传的服务器端请求地址
+                secureuri: false, //是否需要安全协议，一般设置为false
+                fileElementId: 'file1', //文件上传域的ID
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data, status)  //服务器成功响应处理函数
+                {                   
+                    if (typeof (data.error) != 'undefined') {
+                        if (data.error != '') {
+                            alert(data.error);
+                        } else {
+                        	$("#img1").attr("src", data.imgurl).css('display', 'block');
+                        }
+                    }
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(e);
+                }
+            })
+            return false;
+		})
+	})
 </script>
 </block>
