@@ -59,13 +59,13 @@ class AdController extends AdminController
 		$post = I('post.');
 		$id = I('post.id');
 		if($id) {
-			$res = $this->where('ad_id='.$id)->save($post);
+			$res = D('ad')->where('ad_id='.$id)->save($post);
 		} else {
-			$res = $this->add($post);
+			$res = D('ad')->add($post);
 		}
 
 		if(!$res){
-            $this->error(D('Document')->getError());
+            $this->error(D('ad')->getError());
         }else{
             $this->success($id?'更新成功':'新增成功');
         }
