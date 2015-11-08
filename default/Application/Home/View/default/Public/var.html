@@ -9,9 +9,9 @@
 		"VAR"    : ["{:C('VAR_MODULE')}", "{:C('VAR_CONTROLLER')}", "{:C('VAR_ACTION')}"]
 	}
 
-	$('.nav .nav_tags').mouseover(function(){
+	$('.nav .nav_tags').mouseenter(function(){
 		$(this).next('.subnav').css('display', 'block');
-	}).mouseout(function(){
+	}).mouseleave(function(){
 		$(this).next('.subnav').css('display', 'none');
 	})
 
