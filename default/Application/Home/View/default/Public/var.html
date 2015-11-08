@@ -8,5 +8,13 @@
 		"MODEL"  : ["{:C('URL_MODEL')}", "{:C('URL_CASE_INSENSITIVE')}", "{:C('URL_HTML_SUFFIX')}"],
 		"VAR"    : ["{:C('VAR_MODULE')}", "{:C('VAR_CONTROLLER')}", "{:C('VAR_ACTION')}"]
 	}
+
+	$('.subnav_block a').mouseOver(function(){
+		var id = $(this).attr('data-id');
+		$(this).addClass('active');
+		$(this).siblings().removeClass('active');
+		$('#subnav'+id).siblings().css('display', 'none');
+		$('#subnav'+id).css('display', 'block');
+	})
 })();
 </script>
