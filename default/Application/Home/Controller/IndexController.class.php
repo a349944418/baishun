@@ -30,4 +30,9 @@ class IndexController extends HomeController {
         $this->display();
     }
 
+
+    public function test() {
+    	$list = D('Channel')->lists();
+    	dump($list);
+    }
 }
