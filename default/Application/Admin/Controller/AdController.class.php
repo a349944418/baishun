@@ -84,15 +84,22 @@ class AdController extends AdminController
 
 	public function pic1()
 	{
-		$img = D('ad')->where('type="pic1"')->getField('img');
-		$this->assign('img', $img);
+		$info = D('ad')->field('img, ad_id')->where('type="pic1"')->find();
+		$this->assign('img', $info['img']);
+		$this->assign('id', $info['ad_id']);
 		$this->display('pic1');
 	}
 
 	public function save_pic1()
 	{
 		$post = I('post.');
-		$res = D('ad')->where('type="pic1"')->save($post);
+		if($post['id']){			
+			$res = D('ad')->where('ad_id='.$post['id'])->save($post);
+		} else {
+			$post['type'] = 'pic1';
+			$res = D('ad')->add($post);
+		}
+		
 		if($res){
 			$this->success('保存成功',U($pic1));
 		}else{
