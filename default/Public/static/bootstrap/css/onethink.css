@@ -18,7 +18,7 @@ body > .navbar {margin-bottom: 0;}
 .clearfix:after{content:".";height:0;visibility:hidden;display:block;clear:both;}
 .clearfix{display:inline-block;}
 .clearfix{display:block;}
-.subnav_block .subnav_content div img {float: left; margin-right: 6px;}
+.subnav_block .subnav_content div img {float: left; margin-right: 6px;height:148px;width:218px}
 .subnav_content2 {display:none;}
 .subnav_block .subnav_title a:hover, .subnav_block .subnav_title a:active{text-decoration: none;}
 .jumbotron {

@@ -26,7 +26,9 @@
                                         <div class="subnav_content" >
                                             <foreach name="nav._" item="vo" key="i">
                                                 <div id="subnav{$vo.id}" class="clearfix subnav_content2" <if condition="$i eq 0">style="display:block"</if>>
-                                                    <img src="/Uploads/{$vo.pic}" style="width:218px">
+                                                    <neq name="vo.pic" value="">
+                                                        <img src="/Uploads/{$vo.pic}" >
+                                                    </neq>
                                                     {$vo.description}
                                                 </div>
                                             </foreach>
