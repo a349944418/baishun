@@ -1,6 +1,5 @@
 <!-- 导航条
 ================================================== -->
-<?php dump($nav1); ?>
 <div class="navbar ">
     <div class="navbar-inner">
         <div class="container">
@@ -15,7 +14,7 @@
                     <foreach name="nav1" item="nav">
                         <li>
                             <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
-                            <div class="subnav">
+                            <div class="subnav" >
                                 <neq name="nav._" value="">
                                     <div class="npage cleargap pra"></div>
                                     <div class="subnav_title" >
@@ -23,10 +22,10 @@
                                             <a href="{$vo.url|get_nav_url}" target="<eq name='vo.target' value='1'>_blank<else/>_self</eq>" data-id="{$vo.id}">{$vo.title}</a>
                                         </foreach>
                                     <div>
-                                    <div class="subnav_content">
+                                    <div class="subnav_content" >
                                         <foreach name="nav._" item="vo">
                                             <div id="subnav{$vo.id}">
-                                                <img src="Uploads/{$vo.pic}" style="width:218px">
+                                                <img src="/Uploads/{$vo.pic}" style="width:218px">
                                                 {$vo.description}
                                             </div>
                                         </foreach>

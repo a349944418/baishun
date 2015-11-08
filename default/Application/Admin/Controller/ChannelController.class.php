@@ -98,7 +98,7 @@ class ChannelController extends AdminController {
             if(false === $info){
                 $this->error('获取配置信息错误');
             }
-
+            /*
             $pid = i('get.pid', 0);
             //获取父导航
             if(!empty($pid)){
@@ -107,6 +107,9 @@ class ChannelController extends AdminController {
             }
 
             $this->assign('pid', $pid);
+            */
+            $nav = M('Channel')->where('pid=0')->field('title, id')->select();
+            $this->assign('nav', $nav);
             $this->assign('info', $info);
             $this->meta_title = '编辑导航';
             $this->display();
