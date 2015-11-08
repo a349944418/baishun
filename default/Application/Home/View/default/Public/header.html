@@ -15,6 +15,21 @@
                     	<eq name="nav.pid" value="0">
                         <li>
                             <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
+                            <div>
+                                <think:nav name="nav2">
+                                    <eq name="nav1.pid" value="nav.id">
+                                        <a href="{$nav2.url|get_nav_url}" target="<eq name='nav2.target' value='1'>_blank<else/>_self</eq>">{$nav2.title}</a>
+                                    </eq>
+                                </think:nav>
+                                <think:nav name="nav1">
+                                    <eq name="nav1.pid" value="nav.id">
+                                        <div>
+                                            <img src="{$nav1.pic}" />
+                                            {$nav1.description}
+                                        </div>
+                                    </eq>
+                                </think:nav>
+                            </div>
                         </li>
                         </eq>
 
