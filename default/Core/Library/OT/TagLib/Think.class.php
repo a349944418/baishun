@@ -36,6 +36,7 @@ class Think extends TagLib{
         $parse .= '?><volist name="__NAV__" id="'. $tag['name'] .'">';
         $parse .= $content;
         $parse .= '</volist>';
+        dump($parse);
         return $parse;
     }
 
