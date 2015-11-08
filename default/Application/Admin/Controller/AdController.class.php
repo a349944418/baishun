@@ -101,7 +101,7 @@ class AdController extends AdminController
 		}
 		
 		if($res){
-			$this->success('保存成功',U($pic1));
+			$this->success('保存成功',U('pic1'));
 		}else{
 			$this->error('保存失败');
 		}
