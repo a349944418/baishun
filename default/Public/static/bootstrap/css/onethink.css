@@ -8,7 +8,7 @@ body > .navbar {margin-bottom: 0;}
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover { color: #c30d23;}
 .navbar .shop > li > a {display: inline-block; background: #c40e25; color: #fff;}
 .navbar .shop > li > a:focus, .navbar .shop > li > a:hover { text-decoration: none;}
-.subnav { position: absolute;left: -40px;width:433px;z-index: 10000;}
+.subnav { position: absolute;left: -40px;width:433px;z-index: 10000; display: none;}
 .subnav .npage {width: 74px;height: 56px; background: url(../../../Home/images/subnav_npage.png); margin-left: 58px;}
 .subnav_block {width: 381px; display: inline-block; border: 10px solid #b3df90; padding: 25px 16px; background-color: rgba(0,255,0,0.6)}
 .subnav_block .subnav_title {height: 30px; margin-bottom: 15px;}

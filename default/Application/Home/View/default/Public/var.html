@@ -9,6 +9,12 @@
 		"VAR"    : ["{:C('VAR_MODULE')}", "{:C('VAR_CONTROLLER')}", "{:C('VAR_ACTION')}"]
 	}
 
+	$('.nav .nav_tags').mouseover(function(){
+		$(this).next('.subnav').css('display', 'block');
+	}).mouseout(function(){
+		$(this).next('.subnav').css('display', 'none');
+	})
+
 	$('.subnav_block a').mouseover(function(){
 		var id = $(this).attr('data-id');
 		$(this).addClass('active');
