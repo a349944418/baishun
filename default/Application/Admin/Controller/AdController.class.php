@@ -67,7 +67,7 @@ class AdController extends AdminController
 		if(!$res){
             $this->error(D('ad')->getError());
         }else{
-            $this->success($id?'更新成功':'新增成功');
+            $this->success($id?'更新成功':'新增成功',U($post['type']));
         }
 	}
 
