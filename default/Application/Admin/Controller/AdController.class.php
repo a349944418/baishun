@@ -20,7 +20,7 @@ class AdController extends AdminController
 	public function huandeng() 
 	{
 		$list = $this->list('huandeng');
-		$this->assign('title', '首页幻灯片')
+		$this->assign('title', '首页幻灯片');
 		$this->assign('list', $list);
 		$this->display('list');
 	}
