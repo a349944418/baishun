@@ -3,7 +3,7 @@
 <block name="header">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
-      <ol class="carousel-indicators">
+      <ol class="carousel-indicators" style="bottom:10%;right:50%">
         <foreach name="huandeng" item="vo" key="i">
             <li data-target="#carousel-example-generic" data-slide-to="{$i}" <if condition="$i eq 0">class="active"</if> ></li>
         </foreach>
@@ -13,7 +13,7 @@
       <div class="carousel-inner" role="listbox">
         <foreach name="huandeng" item="vo" key="i">
             <div class='item <if condition="$i eq 0">active</if>'>
-                <img src="/Uploads/{$vo.img}" alt="{$vo.title}">
+                <img src="/Uploads/{$vo.img}" alt="{$vo.title}" style="width:100%;">
                 <div class="carousel-caption" style="background:none;"></div>
             </div>
         </foreach>
