@@ -3,7 +3,7 @@
 <block name="header">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
-      <ol class="carousel-indicators" style="bottom:10%;right:50%">
+      <ol class="carousel-indicators" style="top:85%;right:50%">
         <foreach name="huandeng" item="vo" key="i">
             <li data-target="#carousel-example-generic" data-slide-to="{$i}" <if condition="$i eq 0">class="active"</if> ></li>
         </foreach>
@@ -31,40 +31,18 @@
     </div>
 </block>
 
-<block name="side">
-<!-- 左侧 nav
-================================================== -->
-    <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-            {:W('Category/lists', array(1, true))}
-        </ul>
-    </div>
-</block>
-
 <block name="body">
-    <div class="span9">
-        <!-- Contents
-        ================================================== -->
-        <section id="contents">
-            <article:list name="article" category="1" child="true">
-                <div class="">
-                    <h3><a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a></h3>
-                </div>
-                <div>
-                    <p class="lead">{$article.description}</p>
-                </div>
-                <div>
-                    <span><a href="{:U('Article/detail?id='.$article['id'])}">查看全文</a></span>
-                    <span class="pull-right">
-                        <span class="author">{$article.uid|get_username}</span>
-                        <span>于 {$article.create_time|date='Y-m-d H:i',###}</span> 发表在 <span>
-                        <a href="{:U('Article/lists?category='.get_category_name($article['category_id']))}">{$article.category_id|get_category_title}</a></span> ( 阅读：{$article.view} )
-                    </span>
-                </div>
-                <hr/>
-            </article:list>
-
-        </section>
-    </div>
+    <div class="index_news">
+        <div class="index_news_left">
+            <img src="/Uploads/{$news_left}" width="" />
         </div>
+        <div class="index_news_right">
+            <article:list name="article" category="1" child="true">
+                <li>
+                    <a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a>
+                    <span class="pull-right">{$article.create_time|date='Y-m-d'}</span>
+                </li>
+            </article:list>
+        </div>
+    </div>
 </block>
