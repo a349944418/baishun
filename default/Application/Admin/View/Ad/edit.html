@@ -1,0 +1,80 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<div class="main-title">
+		<h2>
+			{$id?'编辑':'新增'}{$type_name}
+		</h2>
+	</div>
+	<form action="{:U('Ad/save')}" method="post" class="form-horizontal">
+		<input type="hidden" name="id" value="{$id}">
+		<input type="hidden" name="type" value="{$type}">
+		<div class="form-item">
+			<label class="item-label">广告标题<span class="check-tips">（可不填）</span></label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="title" value="{$info.title|default=''}">
+			</div>
+		</div>
+		<div class="form-item">
+			<label class="item-label">连接地址<span class="check-tips">（用于调转的URL，如不跳转，可不填）</span></label>
+			<div class="controls">
+				<input type="text" class="text input-large" name="href" value="{$info.href|default=''}">
+			</div>
+		</div>
+		<div class="form-item">
+			<label class="item-label">优先级<span class="check-tips">（广告显示顺序）</span></label>
+			<div class="controls">
+				<input type="text" class="text input-small" name="sort" value="{$info.sort|default='1'}">
+			</div>
+		</div>
+		<div class="form-item">
+			<label class="item-label">上传图片<span class="check-tips"></span></label>
+			<div class="controls">
+				<input type="file" id="file1" name="file"><br />
+				<img id="img1" src="/Uploads/{$info.pic}" <if condition="$info[pic] eq ''">style="display:none"</if> />
+			</div>
+			<input type="hidden" name="img" value="{$info.pic}" >
+		</div>
+		<div class="form-item">
+			<input type="hidden" name="id" value="{$info.id|default=''}">
+			<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+			<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+		</div>
+	</form>
+</block>
+<block name="script">
+<script type="text/javascript" charset="utf-8">
+	//导航高亮
+	highlight_subnav('{:U('index')}');
+</script>
+<script type="text/javascript" src="__JS__/ajaxfileupload.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#file1').change(function(){
+			$.ajaxFileUpload ({
+                url: '{:U("Admin/Upload/pic")}', //用于文件上传的服务器端请求地址
+                secureuri: false, //是否需要安全协议，一般设置为false
+                fileElementId: 'file1', //文件上传域的ID
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data, status)  //服务器成功响应处理函数
+                {                   
+                    if (typeof (data.error) != 'undefined') {
+                        if (data.error != '') {
+                            alert(data.error);
+                        } else {
+
+                        	$("#img1").attr("src", '/Uploads/'+data.imgurl).css('display', 'block');
+                        	$('input[name="img"]').val(data.imgurl);
+                        }
+                    }
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(e);
+                }
+            })
+            return false;
+		})
+	})
+</script>
+</block>

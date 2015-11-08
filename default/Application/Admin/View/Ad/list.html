@@ -1,0 +1,49 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>{$title}列表</h2>
+
+	</div>
+    <div class="tools">
+        <a class="btn" href="{:U('Ad/add', array('type'=>'huandeng'))}">新 增</a>
+    </div>
+
+	<!-- 数据列表 -->
+	<div class="data-table">
+        <div class="data-table table-striped">
+<table class="">
+    <thead>
+        <tr>
+		<th class="">编号</th>
+		<th class="">图片</th>
+		<th class="">简介</th>
+		<th class="">链接地址</th>
+		<th class="">操作</th>
+		</tr>
+    </thead>
+    <tbody>
+	<notempty name="list">
+		<volist name="list" id="vo">
+		<tr>
+			<td>{$vo.ad_id} </td>
+			<td>{$vo.name}</td>
+			<td>{$vo.title}</td>
+			<td>{$vo.img}<a target="href" href="/Uploads/{$vo.img}"> 查看 </a></td>
+            <td>{$vo.href}</td>
+			<td>
+				<a href="{:U('Ad/edit?id='.$vo['id'])}">编辑</a>
+				<a href="{:U('Ad/del?ids='.$vo['id'])}" class="confirm ajax-get">删除</a>
+            </td>
+		</tr>
+		</volist>
+		<else/>
+		<td colspan="7" class="text-center"> aOh! 暂时还没有内容! </td>
+		</notempty>
+	</tbody>
+    </table>
+
+        </div>
+    </div>
+</block>
