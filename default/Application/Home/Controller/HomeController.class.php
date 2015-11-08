@@ -30,6 +30,9 @@ class HomeController extends Controller {
         if(!C('WEB_SITE_CLOSE')){
             $this->error('站点已经关闭，请稍后访问~');
         }
+
+        $nav = D('Channel')->lists();
+        $this->assign('nav1', $nav);
     }
 
 	/* 用户登录检测 */
