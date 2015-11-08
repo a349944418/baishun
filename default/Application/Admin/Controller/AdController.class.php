@@ -74,11 +74,12 @@ class AdController extends AdminController
 	public function del()
 	{
 		$ad_id = I('get.id');
+		$type = D('ad')->where('ad_id='.$ad_id)->getField('type');
 		$res = D('ad')->where('ad_id='.$ad_id)->delete();
 		if(!$res){
             $this->error(D('ad')->getError());
         }else{
-            $this->success('删除成功');
+            $this->success('删除成功',U($type));
         }
 	}
 }
