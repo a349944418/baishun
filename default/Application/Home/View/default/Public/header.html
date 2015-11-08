@@ -12,8 +12,8 @@
             <div class="nav-collapse collapse">
                 <ul class="nav">
                     <foreach name="nav1" item="nav">
-                        <li>
-                            <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>" class="nav_tags">{$nav.title}</a>
+                        <li class="nav_tags">
+                            <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
                             <div class="subnav" >
                                 <neq name="nav._" value="">
                                     <div class="npage"></div>
