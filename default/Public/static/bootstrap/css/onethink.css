@@ -23,7 +23,7 @@ body > .navbar {margin-bottom: 0;}
 .subnav_block .subnav_title a:hover, .subnav_block .subnav_title a:active{text-decoration: none;}
 .index_news {padding-top: 20px}
 .index_news_left {background: url(../../../Home/images/index_news_left.png);width: 511px; height: 298px; float: left; margin-left: 100px;}
-.index_news_left img {margin-top: 30px;}
+.index_news_left img {margin-top: 24px;width: 453px;height: 244px;margin-left:25px;}
 .index_news_right {margin-top: 18px;padding: 5px 10px; background: #fdfcfa; width: 360px; height: 260px; float: left;}
 .index_news_right li {line-height: 28px;height: 28px;}
 .index_news_right li a, .index_news_right li span {color: #494949; font-size: 14px;}

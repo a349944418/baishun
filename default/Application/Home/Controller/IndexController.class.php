@@ -28,7 +28,7 @@ class IndexController extends HomeController {
 
         $huandeng = D('ad')->where('type="huandeng"')->select();
         $this->assign('huandeng', $huandeng);
-        $news_left = D('ad')->where('type="pic1"')->find();
+        $news_left = D('ad')->where('type="pic1"')->getField('img');
         $this->assign('news_left', $news_left);
 
         $this->display();
