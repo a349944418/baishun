@@ -19,7 +19,7 @@
                                     <div class="npage"></div>
                                     <div class="subnav_block">
                                         <div class="subnav_title" >
-                                            <foreach name="nav._" item="vo">
+                                            <foreach name="nav._" item="vo" key="key">
                                                 <a href="{$vo.url|get_nav_url}" target="<eq name='vo.target' value='1'>_blank<else/>_self</eq>" data-id="{$vo.id}" class='<eq name="$key" value="1">active</eq>'>{$vo.title}</a>
                                             </foreach>
                                         </div>
