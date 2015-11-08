@@ -49,7 +49,7 @@
 			<label class="item-label">上传图片<span class="check-tips">（二级导航可显示）</span></label>
 			<div class="controls">
 				<input type="file" id="file1" name="file"><br />
-				<img id="img1" src="{$info.pic}" <if condition="$info[pic] eq ''">style="display:none"</if> />
+				<img id="img1" src="/Uploads/{$info.pic}" <if condition="$info[pic] eq ''">style="display:none"</if> />
 			</div>
 			<input type="hidden" name="pic" value="{$info.pic}" >
 		</div>

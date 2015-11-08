@@ -16,19 +16,21 @@
                             <a href="{$nav.url|get_nav_url}" target="<eq name='nav.target' value='1'>_blank<else/>_self</eq>">{$nav.title}</a>
                             <div class="subnav" >
                                 <neq name="nav._" value="">
-                                    <div class="npage cleargap pra"></div>
-                                    <div class="subnav_title" >
-                                        <foreach name="nav._" item="vo">
-                                            <a href="{$vo.url|get_nav_url}" target="<eq name='vo.target' value='1'>_blank<else/>_self</eq>" data-id="{$vo.id}">{$vo.title}</a>
-                                        </foreach>
-                                    <div>
-                                    <div class="subnav_content" >
-                                        <foreach name="nav._" item="vo">
-                                            <div id="subnav{$vo.id}">
-                                                <img src="/Uploads/{$vo.pic}" style="width:218px">
-                                                {$vo.description}
-                                            </div>
-                                        </foreach>
+                                    <div class="npage"></div>
+                                    <div class="subnav_block">
+                                        <div class="subnav_title" >
+                                            <foreach name="nav._" item="vo">
+                                                <a href="{$vo.url|get_nav_url}" target="<eq name='vo.target' value='1'>_blank<else/>_self</eq>" data-id="{$vo.id}">{$vo.title}</a>
+                                            </foreach>
+                                        </div>
+                                        <div class="subnav_content" >
+                                            <foreach name="nav._" item="vo">
+                                                <div id="subnav{$vo.id}">
+                                                    <img src="/Uploads/{$vo.pic}" style="width:218px">
+                                                    {$vo.description}
+                                                </div>
+                                            </foreach>
+                                        </div>
                                     </div>
                                 </neq>
                             </div>
