@@ -8,8 +8,8 @@ body > .navbar {margin-bottom: 0;}
 .navbar .nav > li > a:focus, .navbar .nav > li > a:hover { color: #c30d23;}
 .navbar .shop > li > a {display: inline-block; background: #c40e25; color: #fff;}
 .navbar .shop > li > a:focus, .navbar .shop > li > a:hover { text-decoration: none;}
-.subNav { position: absolute;left: -40px;width:433px;}
-.subNav .npage {width: 74px;height: 56px; background: url(../../../Home/images/subnav_npage.png)}
+.subnav { position: absolute;left: -40px;width:433px;}
+.subnav .npage {width: 74px;height: 56px; background: url(../../../Home/images/subnav_npage.png)}
 .subnav_block {width: 413px; display: inline-block; border: 10px solid #b3df90;}
 .jumbotron {
     color: #fff;
