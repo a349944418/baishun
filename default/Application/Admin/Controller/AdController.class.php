@@ -81,4 +81,22 @@ class AdController extends AdminController
             $this->success('删除成功',U($type));
         }
 	}
+
+	public function pic1()
+	{
+		$img = D('ad')->where('type="pic1"')->getField('img');
+		$this->assign('img', $img);
+		$this->display('pic1');
+	}
+
+	public function save_pic1()
+	{
+		$post = I('post.');
+		$res = D('ad')->where('type="pic1"')->save($post);
+		if($res){
+			$this->success('保存成功',U($pic1));
+		}else{
+			$this->error('保存失败');
+		}
+	}
 }
