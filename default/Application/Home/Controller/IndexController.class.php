@@ -26,13 +26,10 @@ class IndexController extends HomeController {
         $this->assign('lists',$lists);//列表
         $this->assign('page',D('Document')->page);//分页
 
+        $huandeng = D('ad')->where('type="huandeng"')->select();
+        $this->assign('huandeng', $huandeng);
                  
         $this->display();
     }
 
-
-    public function test() {
-    	$list = D('Channel')->lists();
-    	dump($list);
-    }
 }

@@ -1,12 +1,35 @@
 <extend name="Base/common"/>
 
 <block name="header">
-    <header class="jumbotron subhead" id="overview">
-        <div class="container">
-            <h2>源自相同起点，演绎不同精彩！</h2>
-            <p class="lead"></p>
-        </div>
-    </header>
+<div class=""></div>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <foreach name="huandeng" item="vo" key="i">
+            <li data-target="#carousel-example-generic" data-slide-to="{$i}" <if condition="$i eq 0">class="active"</if> ></li>
+        </foreach>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <foreach name="huandeng" item="vo" key="i">
+            <div class='item <if condition="$i eq 0">active</if>'>
+                <img src="/Uploads/{$vo.img}" alt="{$vo.title}">
+                <div class="carousel-caption"></div>
+            </div>
+        </foreach>
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev" style="display:none">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next" style="display:none">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
 </block>
 
 <block name="side">
