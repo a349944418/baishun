@@ -10,9 +10,9 @@
 	}
 
 	$('.nav .nav_tags').hover(function(){
-		$(this).next('.subnav').css('display', 'block');
+		$(this).find('.subnav').css('display', 'block');
 	},function(){
-		$(this).next('.subnav').css('display', 'none');
+		$(this).find('.subnav').css('display', 'none');
 	})
 
 	$('.subnav_block a').mouseover(function(){
