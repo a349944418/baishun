@@ -19,13 +19,13 @@
                                     <div class="npage"></div>
                                     <div class="subnav_block">
                                         <div class="subnav_title" >
-                                            <foreach name="nav._" item="vo" key="key">
-                                                <a href="{$vo.url|get_nav_url}" target="<eq name='vo.target' value='1'>_blank<else/>_self</eq>" data-id="{$vo.id}" class='<eq name="$key" value="1">active</eq>'>{$vo.title}</a>
+                                            <foreach name="nav._" item="vo" key="i">
+                                                <a href="{$vo.url|get_nav_url}" target="<eq name='vo.target' value='1'>_blank<else/>_self</eq>" data-id="{$vo.id}" class='<if condition="$i eq 1">active</if>'>{$vo.title}</a>
                                             </foreach>
                                         </div>
                                         <div class="subnav_content" >
-                                            <foreach name="nav._" item="vo">
-                                                <div id="subnav{$vo.id}">
+                                            <foreach name="nav._" item="vo" key="i">
+                                                <div id="subnav{$vo.id}" class="clearfix subnav_content2" <if condition="$i eq 1">style="display:block"</if>>
                                                     <img src="/Uploads/{$vo.pic}" style="width:218px">
                                                     {$vo.description}
                                                 </div>
