@@ -21,7 +21,12 @@ body > .navbar {margin-bottom: 0;}
 .subnav_block .subnav_content div img {float: left; margin-right: 6px;height:148px;width:218px}
 .subnav_content2 {display:none;}
 .subnav_block .subnav_title a:hover, .subnav_block .subnav_title a:active{text-decoration: none;}
-.index_news_left {background: url(../../../Home/images/index_news_left.png);width: 511px; height: 298px; float: left;}
+.index_news {padding-top: 20px}
+.index_news_left {background: url(../../../Home/images/index_news_left.png);width: 511px; height: 298px; float: left; margin-left: 90px;}
+.index_news_right {padding-top: 9px; background: #fdfcfa; width: 380px; height: 280px;}
+.index_news_right li {line-height: 28px;height: 28px;}
+.index_news_right li a, .index_news_right li span {color: #494949; font-size: 14px;}
+a:hover, a:active{text-decoration: none;}
 .jumbotron {
     color: #fff;
     text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
