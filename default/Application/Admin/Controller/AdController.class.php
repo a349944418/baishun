@@ -19,14 +19,14 @@ class AdController extends AdminController
 
 	public function huandeng() 
 	{
-		$list = $this->list('huandeng');
+		$list = $this->getlist('huandeng');
 		$this->assign('title', '首页幻灯片');
 		$this->assign('list', $list);
 		$this->display('list');
 	}
 
 
-	public function list($type)
+	public function getlist($type)
 	{
 		$list = D('ad')->where('type="'.$type.'"')->order('sort')->select();
 		return $list;
