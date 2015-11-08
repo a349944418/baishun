@@ -63,8 +63,6 @@ class AdController extends AdminController
 		} else {
 			$res = D('ad')->add($post);
 		}
-		dump($id);
-		die(D('ad')->getLastSql());
 		if(!$res){
             $this->error(D('ad')->getError());
         }else{
