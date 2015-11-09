@@ -113,8 +113,11 @@ class AdController extends AdminController
 	public function goodsback()
 	{
 		$goods = $this->getlist('goods');
+		dump($goods);
 		$goodsback = $this->getlist('goods_back');
+		dump($goodsback);
 		$list = array_merge($goodsback, $goods);
+		dump($list);
 		$this->assign('goods', $goods);
 		$this->assign('goodsback', $goodsback);
 		$this->assign('list', $list);
