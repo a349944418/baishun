@@ -28,6 +28,12 @@ body > .navbar {margin-bottom: 0;}
 .index_news_right li {line-height: 28px;height: 28px;}
 .index_news_right li a, .index_news_right li span {color: #494949; font-size: 14px;}
 a:hover, a:active{text-decoration: none;}
+.huoban {padding: 10px 0px;}
+.huobantitle {width: 1120px; height: 90px; background:url(../../../Home/images/huoban_relation.jpg);}
+.huobanlist {margin: 5px 90px 15px; }
+.huobanitem {float: left; width: 16%; height: 16%; margin: 0.5%; }
+.huoban2, .huoban7 {width: 30%; height: 16%;}
+.huobanitem img {width: 100%; height: 100%;}
 .jumbotron {
     color: #fff;
     text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);

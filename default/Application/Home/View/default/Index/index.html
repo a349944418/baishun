@@ -8,6 +8,7 @@
         .goodslist {position: absolute;}
         .goods .text {background-color:#000; FILTER:alpha(opacity=60); opacity:0.7; -moz-opacity:0.7; position: absolute;font-size: 14px;z-index:-1;text-align: center; color: white;}
     </style>
+    <!-- zbq 幻灯片 -->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators" style="top:85%;right:50%">
@@ -39,6 +40,7 @@
 </block>
 
 <block name="body">
+    <!-- zbq 新闻 -->
     <div id="main-container" class="container">
         <div class="row">
             <div class="index_news clearfix">
@@ -58,7 +60,7 @@
             </div>
         </div>
     </div>
-    
+    <!-- zbq 产品 -->
     <div class="container_fuild goodsback">     
         <img src="/Uploads/{$goodsback[0].img}" style="width:100%">
         <div class="goodslist" >
@@ -88,4 +90,22 @@
             })
         })
     </script>
+    <!-- zbq 合作伙伴 -->
+    <div class="container huoban">
+        <div class="huobantitle">
+            {:C('COMPANY_JIAMENG')}
+        </div>
+        <div class="huobanlist" >
+            <foreach name="list" item="v" key="k">
+                <div class="huobanitem huoban{$k}">
+                    <if condition="$v[img] neq ''">
+                        <img src="Uploads/{$v.img}" />
+                    </if>
+                </div>
+                <if condition="$k eq 4">
+                    <div style="clear:both"></div>
+                </if>
+            </foreach>
+        </div>
+    </div>
 </block>
