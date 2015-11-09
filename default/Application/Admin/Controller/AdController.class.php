@@ -66,6 +66,7 @@ class AdController extends AdminController
 		if(!$res){
             $this->error(D('ad')->getError());
         }else{
+        	$post['type'] = $post['type'] == 'goods' ? 'goodsback' : $post['type'];
             $this->success($id?'更新成功':'新增成功',U($post['type']));
         }
 	}
@@ -115,7 +116,6 @@ class AdController extends AdminController
 		$goods = $this->getlist('goods');
 		$goodsback = $this->getlist('goodsback');
 		$list = array_merge($goodsback, $goods);
-		dump($list);
 		$this->assign('goods', $goods);
 		$this->assign('goodsback', $goodsback);
 		$this->assign('list', $list);
