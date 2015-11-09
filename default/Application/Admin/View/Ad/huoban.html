@@ -1,0 +1,54 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<style type="text/css">
+		.huobanitem {float: left; width: 16%; height: 16%; margin: 0.5%; }
+		.huoban3, .huoban8 {width: 30%; height: 16px;}
+	</style>
+	<!-- 标题栏 -->
+	<div class="container_fuild goodsback">	
+		<div class="huobanlist" >
+			<foreach name="huoban" item="v" key="k">
+				<div class="huobanitem huoban{$k}">
+					<img src="Uploads/{$v.img}" />
+				</div>
+			</foreach>
+			<div style="clear:both"></div>
+		</div>		
+	</div>
+	<div style="clear:both"></div>
+	<!-- 数据列表 -->
+	<div class="data-table">
+        <div class="data-table table-striped">
+<table class="">
+    <thead>
+        <tr>
+		<th class="">编号</th>
+		<th class="">位置</th>
+		<th class="">图片</th>
+		<th class="">链接地址</th>
+		<th class="">操作</th>
+		</tr>
+    </thead>
+    <tbody>
+	<notempty name="list">
+		<volist name="list" id="vo">
+		<tr>
+			<td>{$vo.sort} </td>
+			<td><if condition="$vo[type] eq 'goods'">产品<else />背景图</if></td>
+			<td>{$vo.img}<a target="href" href="/Uploads/{$vo.img}"> 查看 </a></td>
+            <td>{$vo.href}</td>
+			<td>
+				<a href="{:U('Ad/edit?id='.$vo['ad_id'])}">编辑</a>
+            </td>
+		</tr>
+		</volist>
+		<else/>
+		<td colspan="7" class="text-center"> aOh! 暂时还没有内容! </td>
+		</notempty>
+	</tbody>
+    </table>
+
+        </div>
+    </div>
+</block>

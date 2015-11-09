@@ -121,4 +121,14 @@ class AdController extends AdminController
 		$this->assign('list', $list);
 		$this->display();
 	}
+
+	/**
+	 * 首页合作伙伴
+	 */
+	public function huoban()
+	{
+		$list = $this->getlist('huoban');
+		$this->assign('list', $list);
+		$this->display();
+	}
 }
