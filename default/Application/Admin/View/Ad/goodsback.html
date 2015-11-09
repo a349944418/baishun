@@ -6,7 +6,7 @@
 		.goods {display: inline-block; margin-right: 15px; position: relative; overflow: hidden;}
 		.goodsback img { top: 0; left: 0;}
 		.goodslist {position: absolute;}
-		.goods .text {background-color:#000; FILTER:alpha(opacity=60); opacity:0.7; -moz-opacity:0.7; position: absolute;font-size: 14px;z-index:-1;text-align: center; color: whtie;}
+		.goods .text {background-color:#000; FILTER:alpha(opacity=60); opacity:0.7; -moz-opacity:0.7; position: absolute;font-size: 14px;z-index:-1;text-align: center; color: white;}
 	</style>
 	<!-- 标题栏 -->
 	<div class="container_fuild goodsback">		
@@ -72,7 +72,9 @@
 			$('.goodslist').css({'width': (parseInt(3*h)+15)+'px','top':(0.1*h)+'px', 'left':zleft+'px'});
 			$('.goods .text').css({'font-size':(0.12*h)+'px', 'line-height':(0.2*h)+'px'})
 			$('.goods').hover(function(){
-				$(this).find('.text').css({'z-index':'1000','top':0,'left':0,'width':(0.8*h-2)+'px', 'height':(0.8*h-2)+'px','border':'none', 'border-radius':(0.8*h)+'px'});
+				$(this).find('.text').css({'z-index':'1000','top':0,'left':0,'width':(0.8*h-8)+'px', 'height':(0.8*h-8)+'px','border':'none', 'border-radius':(0.8*h)+'px'});
+			},function(){
+				$(this).find('.text').css({'top':(0.8*h)+'px','left':(0.8*h)+'px'})
 			})
 		})
 	</script>
