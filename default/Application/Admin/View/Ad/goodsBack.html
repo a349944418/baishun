@@ -1,16 +1,22 @@
 <extend name="Public/base"/>
 
 <block name="body">
+	<style type="text/css">
+		.goodsback {position: relative;}
+		.goods {float: left; height: 80%; width: 80%; margin: 10% auto; border: 100%;}
+		.goodsback img {position: absolute; top: 0; left: 0;}
+	</style>
 	<!-- 标题栏 -->
 	<div class="container_fuild goodsback">
 		<div class="goodslist" >
 			<foreach name="goods" item="v">
-				<div>
+				<div class="goods">
 					<img src="Uploads/{$v.img}" />
 				</div>
 			</foreach>
 		</div>
 		<img src="/Uploads/{$goodsback[0].img}" style="width:100%">
+		<div style="clear:both"></div>
 	</div>
 	<!-- 数据列表 -->
 	<div class="data-table">
