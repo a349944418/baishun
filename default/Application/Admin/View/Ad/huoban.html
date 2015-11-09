@@ -3,13 +3,16 @@
 <block name="body">
 	<style type="text/css">
 		.huobanitem {float: left; width: 16%; height: 16%; margin: 0.5%; }
-		.huoban3, .huoban8 {width: 30%; height: 16px;}
+		.huoban2, .huoban7 {width: 30%; height: 16%;}
+		.huobanitem img {width: 100%; height: 100%;}
 	</style>
 	<!-- 标题栏 -->
 	<div class="huobanlist" >
 		<foreach name="list" item="v" key="k">
 			<div class="huobanitem huoban{$k}">
-				<img src="Uploads/{$v.img}" />
+				<if condition="$v[img] neq ''">
+					<img src="Uploads/{$v.img}" />
+				</if>
 			</div>
 		</foreach>
 	</div>	
