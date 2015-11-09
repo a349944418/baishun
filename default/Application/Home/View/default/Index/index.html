@@ -93,10 +93,10 @@
     <!-- zbq 合作伙伴 -->
     <div class="container huoban">
         <div class="huobantitle">
-            {:C('COMPANY_JIAMENG')}
+            <div class="huoban_relation">{:C('COMPANY_JIAMENG')}</div>
         </div>
         <div class="huobanlist" >
-            <foreach name="list" item="v" key="k">
+            <foreach name="huoban" item="v" key="k">
                 <div class="huobanitem huoban{$k}">
                     <if condition="$v[img] neq ''">
                         <img src="Uploads/{$v.img}" />

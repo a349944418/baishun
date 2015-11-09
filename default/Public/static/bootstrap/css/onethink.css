@@ -30,6 +30,7 @@ body > .navbar {margin-bottom: 0;}
 a:hover, a:active{text-decoration: none;}
 .huoban {padding: 10px 0px;}
 .huobantitle {width: 1120px; height: 90px; background:url(../../../Home/images/huoban_relation.jpg);}
+.huoban_relation {margin-top: 50px; margin-left: 658px; color: #005703;font-size: 18px;}
 .huobanlist {margin: 5px 90px 15px; }
 .huobanitem {float: left; width: 16%; height: 16%; margin: 0.5%; }
 .huoban2, .huoban7 {width: 30%; height: 16%;}
