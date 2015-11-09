@@ -3,9 +3,9 @@
 <block name="body">
 	<style type="text/css">
 		.goodsback {position: relative;}
-		.goods {display: inline-block; height: 80%; width: 80%; margin-right: 15px;}
-		.goodsback img {position: absolute; top: 0; left: 0;}
-		.goodslist {margin: 0 auto;}
+		.goods {display: inline-block; margin-right: 15px;}
+		.goodsback img { top: 0; left: 0;}
+		.goodslist {position: absolute;}
 		.goods img {border: 100%;}
 	</style>
 	<!-- 标题栏 -->
@@ -57,4 +57,16 @@
 
         </div>
     </div>
+</block>
+
+<block name="script">
+	<script type="text/javascript" charset="utf-8">
+		$(function(){
+			var h = $('.goodsback').height();
+			var zleft = $('.goodsback').width()/2 - (2.4*h +45)/2;
+			$('.goods').css({'width':(0.8*h)+'px', 'height':(0.8*h)+'px'});
+			$('.goods img').css({'border':(0.8*h)+'px'});
+			$('.goodslist').css({'width': (parseInt(2.4*h)+45)+'px','top':(0.1*h)+'px', 'left':zleft+'px'});
+		})
+	</script>
 </block>
