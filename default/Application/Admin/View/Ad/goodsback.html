@@ -3,19 +3,23 @@
 <block name="body">
 	<style type="text/css">
 		.goodsback {position: relative;}
-		.goods {display: inline-block; margin-right: 15px;}
+		.goods {display: inline-block; margin-right: 15px; position: relative; overflow: hidden;}
 		.goodsback img { top: 0; left: 0;}
 		.goodslist {position: absolute;}
 		.goods img {border: 100%;}
+		.goods .text {background-color:#000; FILTER:alpha(opacity=60); opacity:0.7; -moz-opacity:0.7; position: absolute;font-size: 14px;z-index:-1;}
 	</style>
 	<!-- 标题栏 -->
 	<div class="container_fuild goodsback">		
 		<img src="/Uploads/{$goodsback[0].img}" style="width:100%">
 		<div class="goodslist" >
 			<foreach name="goods" item="v">
-				<div class="goods">
-					<img src="Uploads/{$v.img}" />
-				</div>
+				<a href="{$v.href}" />
+					<div class="goods">
+						<img src="Uploads/{$v.img}" />
+						<div class="text">{$v.title}<br />系列产品</div>
+					</div>
+				</a>
 			</foreach>
 			<div style="clear:both"></div>
 		</div>		
@@ -63,10 +67,14 @@
 	<script type="text/javascript" charset="utf-8">
 		$(function(){
 			var h = $('.goodsback').height();
-			var zleft = $('.goodsback').width()/2 - (2.4*h +45)/2;
-			$('.goods').css({'width':(0.8*h)+'px', 'height':(0.8*h)+'px'});
+			var zleft = $('.goodsback').width()/2 - (1.5*h);
+			$('.goods').css({'width':(0.8*h)+'px', 'height':(0.8*h)+'px','margin-right':(0.2*h)+'px'});
 			$('.goods img').css({'border':(0.8*h)+'px'});
-			$('.goodslist').css({'width': (parseInt(2.4*h)+45)+'px','top':(0.1*h)+'px', 'left':zleft+'px'});
+			$('.goodslist').css({'width': (parseInt(3*h)+6)+'px','top':(0.1*h)+'px', 'left':zleft+'px'});
+
+			$('.goods').hover(function(){
+				$(this).find('.text').css('z-index', '1000');
+			})
 		})
 	</script>
 </block>
