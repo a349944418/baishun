@@ -106,4 +106,18 @@ class AdController extends AdminController
 			$this->error('保存失败');
 		}
 	}
+
+	/**
+	 * 产品页及背景图
+	 */
+	public function goodsback()
+	{
+		$goods = $this->getlist('goods');
+		$goodsback = $this->getlist('goods_back');
+		$list = array_merge($goodsback, $goods);
+		$this->assign('goods', $goods);
+		$this->assign('goodsback', $goodsback);
+		$this->assign('list', $list);
+		$this->display();
+	}
 }
