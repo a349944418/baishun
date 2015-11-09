@@ -30,6 +30,10 @@ class IndexController extends HomeController {
         $this->assign('huandeng', $huandeng);
         $news_left = D('ad')->where('type="pic1"')->getField('img');
         $this->assign('news_left', $news_left);
+        $goods = $this->getlist('goods');
+		$goodsback = $this->getlist('goodsback');
+		$this->assign('goods', $goods);
+		$this->assign('goodsback', $goodsback);
 
         $this->display();
     }
