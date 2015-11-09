@@ -3,7 +3,7 @@
 <block name="body">
 	<style type="text/css">
 		.goodsback {position: relative;}
-		.goods {float: left; height: 80%; width: 80%; }
+		.goods {display: inline-block; height: 80%; width: 80%; margin-right: 15px;}
 		.goodsback img {position: absolute; top: 0; left: 0;}
 		.goodslist {margin: 0 auto;}
 		.goods img {border: 100%;}
@@ -17,9 +17,10 @@
 					<img src="Uploads/{$v.img}" />
 				</div>
 			</foreach>
-		</div>
-		<div style="clear:both"></div>
+			<div style="clear:both"></div>
+		</div>		
 	</div>
+	<div style="clear:both"></div>
 	<!-- 数据列表 -->
 	<div class="data-table">
         <div class="data-table table-striped">
