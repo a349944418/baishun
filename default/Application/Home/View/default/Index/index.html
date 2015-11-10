@@ -60,8 +60,12 @@
             </div>
         </div>
     </div>
-    <script src="__PUBLIC__/Home/js/slide.js"></script>
+    <script src="__PUBLIC__/Home/js/slide.js"></script>s
     <script>
+        var zww = $(window).width();
+        var zwh = (zww/1920)*500;
+        $('.ck-slide').css({'width':zww+'px','height':zwh+'px'});
+        $('.ck-slide ul.ck-slide-wrapper').css({'height':zwh+'px'});
         $('.ck-slide').ckSlide({
             autoPlay: true
         });
