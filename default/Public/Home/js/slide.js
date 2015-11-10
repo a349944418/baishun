@@ -9,7 +9,7 @@
             var index = 0;
             var time = null;
             $(this).data('opts', opts);
-            // next
+            /*// next
             $(this).find('.ck-next').on('click', function(){
                 if(opts['isAnimate'] == true){
                     return;
@@ -36,7 +36,7 @@
                     index--;
                 }
                 change.call(that, index, old);
-            });
+            });*/
             $(this).find('.ck-slidebox li').each(function(cindex){
                 $(this).on('click.slidebox', function(){
                     change.call(that, cindex, index);
