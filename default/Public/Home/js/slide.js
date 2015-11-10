@@ -9,8 +9,8 @@
             var index = 0;
             var time = null;
             $(this).data('opts', opts);
-            /*// next
-            $(this).find('.ck-next').on('click', function(){
+            // next
+            /*$(this).find('.ck-next').on('click', function(){
                 if(opts['isAnimate'] == true){
                     return;
                 }
