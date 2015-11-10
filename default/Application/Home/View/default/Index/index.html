@@ -37,6 +37,34 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
+    <link rel="stylesheet" href="http://down.admin5.com/demo/code_pop/19/906/css/slide.css">
+    
+    <!-- html -->
+    <div class="ck-slide">
+        <ul class="ck-slide-wrapper">
+            <foreach name="huandeng" item="vo" key="i">
+                <li style="opacity: 0; ">
+                    <a href="javascript:;"><img src="/Uploads/{$vo.img}" alt="{$vo.title}" style="width:100%;"></a>
+                </li>
+            </foreach>
+        </ul>
+        <a href="javascript:;" class="ctrl-slide ck-prev" style="opacity: 0.15; ">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next" style="opacity: 0.15; ">下一张</a>
+        <div class="ck-slidebox" style="margin-left: -54px; ">
+            <div class="slideWrap">
+                <ul class="dot-wrap">
+                    <foreach name="huandeng" item="vo" key="i">
+                        <li <if condition="$i eq 0">class="current"</if> ><em>&nbsp;</em></li>
+                    </foreach>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="__PUBLIC__/Home/js/slide.js"></script>
+    <script>
+        $('.ck-slide').ckSlide({
+            autoPlay: true
+        });
+    </script>
 </block>
 
 <block name="body">
