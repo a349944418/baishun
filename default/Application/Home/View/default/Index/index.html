@@ -45,7 +45,7 @@
         <ul class="ck-slide-wrapper">
             <foreach name="huandeng" item="vo" key="i">
                 <li style="opacity: 0; ">
-                    <a href="javascript:;"><img src="/Uploads/{$vo.img}" alt="{$vo.title}" style="width:100%;"></a>
+                    <a href="javascript:;"><img src="/Uploads/{$vo.img}" alt="{$vo.title}"></a>
                 </li>
             </foreach>
         </ul>
@@ -66,6 +66,7 @@
         var zwh = (zww/1920)*500;
         $('.ck-slide').css({'width':zww+'px','height':zwh+'px'});
         $('.ck-slide ul.ck-slide-wrapper').css({'height':zwh+'px'});
+        $('ul.ck-slide-wrapper img').css({'width':zww+'px','height':zwh+'px'});
         $('.ck-slide').ckSlide({
             autoPlay: true
         });
