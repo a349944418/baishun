@@ -1,7 +1,7 @@
 body {padding-top: 0;}
 body > .navbar {margin-bottom: 0;}
 .navbar .container, .container {width: 1120px;}
-.brand img {margin-top: 30px; margin-left: 20px; width: 133px; height: 74px;}
+.brand img {margin-top: 30px; margin-left: 20px; min-width: 133px; height: 74px;}
 .navbar-inner {border-radius: 0; border: 0px; background-image: none; background-color: white; }
 .navbar .nav > li, .navbar .shop > li { padding: 75px 0 49px; position: relative;}
 .navbar .nav > li > a, .navbar .shop > li > a { line-height: 32px; padding: 0 15px; margin: 4px 0 ; font-size: 20px; font-family: '微软雅黑'; text-shadow: 0 0; color: #016b07;}
