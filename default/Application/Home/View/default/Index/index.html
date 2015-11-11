@@ -33,21 +33,23 @@
     </div>
     <script src="__PUBLIC__/Home/js/slide.js"></script>s
     <script>
-        var zww = $(window).width();
-        var zwh = (zww/1920)*500;
-        $('.ck-slide').css({'width':zww+'px','height':zwh+'px'});
-        $('.ck-slide ul.ck-slide-wrapper').css({'width':zww+'px','height':zwh+'px'});
-        $('ul.ck-slide-wrapper li').css({'width':zww+'px','height':zwh+'px'});
-        $('ul.ck-slide-wrapper img').css({'width':zww+'px','height':zwh+'px'});
-        $('.ck-slide').ckSlide({
-            autoPlay: true
-        });
+        $(function(){
+            var zww = $(window).width();
+            var zwh = (zww/1920)*500;
+            $('.ck-slide').css({'width':zww+'px','height':zwh+'px'});
+            $('.ck-slide ul.ck-slide-wrapper').css({'width':zww+'px','height':zwh+'px'});
+            $('ul.ck-slide-wrapper li').css({'width':zww+'px','height':zwh+'px'});
+            $('ul.ck-slide-wrapper img').css({'width':zww+'px','height':zwh+'px'});
+            $('.ck-slide').ckSlide({
+                autoPlay: true
+            });
+        })        
     </script>
 </block>
 
 <block name="body">
     <!-- zbq 新闻 -->
-    <div id="main-container" class="container">
+    <div class="container">
         <div class="row">
             <div class="index_news clearfix">
                 <div class="index_news_left">
@@ -83,7 +85,7 @@
     </div>
     <script type="text/javascript">
         $(function(){
-            var h = $('.goodsback').height();
+            var h = $(window).width()/1920*294;
             var zleft = $('.goodsback').width()/2 - (1.7*h);
             $('.goods').css({'width':(0.8*h)+'px', 'height':(0.8*h)+'px','margin-right':(0.3*h)+'px'});
             $('.goods img').css({'border-radius':(0.8*h)+'px','width':(0.8*h)+'px'});
