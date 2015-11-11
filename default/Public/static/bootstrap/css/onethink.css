@@ -10,7 +10,7 @@ body > .navbar {margin-bottom: 0;}
 .navbar .shop > li > a:focus, .navbar .shop > li > a:hover { text-decoration: none;}
 .subnav { position: absolute;left: -40px;width:433px;z-index: 10000; display: none;}
 .subnav .npage {width: 74px;height: 56px; background: url(../../../Home/images/subnav_npage.png); margin-left: 58px;}
-.subnav_block {width: 381px; display: inline-block; border: 10px solid #b3df90; padding: 13px 16px; background-color: rgba(0,255,0,0.6)}
+.subnav_block {width: 381px; display: inline-block; border: 10px solid #b3df90; padding: 13px 16px; background-color: rgb(0,255,0)}
 .subnav_block .subnav_title {height: 30px; margin-bottom: 10px;}
 .subnav_block .subnav_title a {line-height: 30px; font-size: 16px;font-family: "微软雅黑"; color: white; margin-right: 15px}
 .subnav_block .subnav_title a.active {color: #be2720;}
