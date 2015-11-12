@@ -1,0 +1,48 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>{$title}列表</h2>
+
+	</div>
+    <div class="tools">
+        <a class="btn" href="{:U('Friendlink/add')}">新 增</a>
+    </div>
+
+	<!-- 数据列表 -->
+	<div class="data-table">
+        <div class="data-table table-striped">
+<table class="">
+    <thead>
+        <tr>
+		<th class="">编号</th>
+		<th class="">名称</th>
+		<th class="">地址</th>
+		<th>排序</th>
+		<th class="">操作</th>
+		</tr>
+    </thead>
+    <tbody>
+	<notempty name="list">
+		<volist name="list" id="vo">
+		<tr>
+			<td>{$vo.fid} </td>
+            <td>{$vo.fname}</td>
+            <td>{$vo.furl}</td>
+            <td>{$vo.sort}</td>
+			<td>
+				<a href="{:U('Ad/edit?id='.$vo['fid'])}">编辑</a>
+				<a href="{:U('Ad/del?id='.$vo['fid'])}" class="confirm">删除</a>
+            </td>
+		</tr>
+		</volist>
+		<else/>
+		<td colspan="7" class="text-center"> aOh! 暂时还没有内容! </td>
+		</notempty>
+	</tbody>
+    </table>
+
+        </div>
+    </div>
+</block>
