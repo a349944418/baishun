@@ -35,7 +35,7 @@ class AdController extends AdminController
 
 	public function add()
 	{
-		$name = array('huandeng'=>'首页幻灯片'，'shop'=>'在线商城下拉');
+		$name = array('huandeng'=>'首页幻灯片','shop'=>'在线商城下拉');
 		$type = I('get.type');
 		$type_name = $name[$type];
 		$this->assign('type_name', $type_name);
