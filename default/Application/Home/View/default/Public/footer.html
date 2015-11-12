@@ -8,16 +8,18 @@
     </footer> -->
 <style>
 	.footer{ width:100%; background:#6DCF2A;}
+    .footer p, .footer a{color: #025706;}
 	.footer-guanzhu{ padding:0 30px; font-size:14px; color:#005804; float:left; border-right:1px solid #62BB25; height:160px;}
-	.footer-guanzhu-left{ float:left; width:150px;}
+	.footer-guanzhu-left{ float:left; width:150px; text-align: left}
 	.footer-guanzhu-right{ float:left; padding-top:5px; padding-left:20px;}
 	.footer-guanzhu h3{ font-size:14px; color:#132819; text-align: left;}
 	.footer-lianxi{ padding:0 38px; font-size:14px; color:#005804; float:left; border-right:1px solid #62BB25; height:160px;}
 	.footer-lianxi h3{ font-size:14px; color:#132819; text-align: left;}
-	.footer-lianxi p{ margin-bottom:0px; width:190px; text-align: left;}
+	.footer-lianxi p{ margin-bottom:0px; width:190px; text-align: left; color: #025706;}
 	.footer1{ margin-top:18px; padding-top:20px; padding-bottom:20px; border-top:1px solid #62BB25;border-bottom:1px solid #62BB25;}
-	.none{ border:none;}
-	.coptright{ margin-top:10px; margin-bottom:10px;}
+    .footer .relation p{width:250px;}
+	.none{ border:none; padding-right: 0px;}
+	.coptright{ margin-top:18px; margin-bottom:10px;}
 	.coptright p{ margin-top:5px; text-align:center;color:#005804;}
 	.coptright p a{ padding:0 25px; color:#005804;}
 </style>
@@ -28,13 +30,13 @@
             	<h3>关注</h3>
                 <div class="footer-guanzhu-left">
                 	<p>关注微信公众平台<br/>更多精彩！更多惊喜！</p>
-                    <p>微信公众账号：</p>
+                    <p style="margin-top:10px;">微信公众账号：</p>
                 </div>
                 <div class="footer-guanzhu-right">
                 	<img src="/Uploads/{$erweima}" style="width:85px;height:85px;"/>
                 </div>
             </div>
-            <div class="footer-lianxi">
+            <div class="footer-lianxi relation">
             	<h3>联系</h3>
                 <p>{:C('COMPANY_NAME')}</p>
                 <p>地址：{:C('COMPANY_ADDRESS')}</p>
