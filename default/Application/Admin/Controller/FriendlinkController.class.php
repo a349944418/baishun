@@ -17,7 +17,7 @@ use Think\Page;
 class FriendlinkController extends AdminController 
 {
 
-	public function list() 
+	public function lists()
 	{
 		$list = D('friendlink')->select();
 		$this->assign('title', '底部友情链接');
