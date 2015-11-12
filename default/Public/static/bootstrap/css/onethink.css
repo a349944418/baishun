@@ -16,7 +16,7 @@ body > .navbar {margin-bottom: 0;}
 .subnav_block .subnav_title a.active {color: #be2720;}
 .subnav_block .subnav_content div {background: white; padding: 5px; line-height: 20px; font-size: 14px; color: #b3aa99;}
 .shopnav .subshopnav_content {float:left; margin: 0px 10px;}
-.shopnav {padding: 13px 6px;}
+.shopnav .subnav_block{padding: 13px 6px; width:370px;}
 .clearfix:after{content:".";height:0;visibility:hidden;display:block;clear:both;}
 .clearfix{display:inline-block;}
 .clearfix{display:block;}
