@@ -22,6 +22,7 @@ class AdController extends AdminController
 		$list = $this->getlist('huandeng');
 		$this->assign('title', '首页幻灯片');
 		$this->assign('list', $list);
+		$this->assign('type', 'huandeng');
 		$this->display('list');
 	}
 
@@ -34,7 +35,7 @@ class AdController extends AdminController
 
 	public function add()
 	{
-		$name = array('huandeng'=>'首页幻灯片');
+		$name = array('huandeng'=>'首页幻灯片'，'shop'=>'在线商城下拉');
 		$type = I('get.type');
 		$type_name = $name[$type];
 		$this->assign('type_name', $type_name);
@@ -44,7 +45,7 @@ class AdController extends AdminController
 
 	public function edit()
 	{
-		$name = array('huandeng'=>'首页幻灯片');
+		$name = array('huandeng'=>'首页幻灯片','shop'=>'在线商城下拉');
 		$ad_id = I('get.id');
 		$res = D('ad')->where('ad_id='.$ad_id)->find();
 		$type_name = $name[$res['type']];
@@ -130,5 +131,40 @@ class AdController extends AdminController
 		$list = $this->getlist('huoban');
 		$this->assign('list', $list);
 		$this->display();
+	}
+
+
+	public function erweima()
+	{
+		$info = D('ad')->field('img, ad_id')->where('type="erweima"')->find();
+		$this->assign('img', $info['img']);
+		$this->assign('id', $info['ad_id']);
+		$this->display('erweima');
+	}
+
+	public function save_erweima()
+	{
+		$post = I('post.');
+		if($post['id']){			
+			$res = D('ad')->where('ad_id='.$post['id'])->save($post);
+		} else {
+			$post['type'] = 'erweima';
+			$res = D('ad')->add($post);
+		}
+		
+		if($res){
+			$this->success('保存成功',U('erweima'));
+		}else{
+			$this->error('保存失败');
+		}
+	}
+
+	public function shop()
+	{
+		$list = $this->getlist('shop');
+		$this->assign('title', '导航在线商城下拉');
+		$this->assign('list', $list);
+		$this->assign('type', 'shop');
+		$this->display('list');
 	}
 }
