@@ -36,6 +36,11 @@ class HomeController extends Controller {
 
         $friendlink = D('friendlink')->order('sort')->select();
         $this->assign('friendlink', $friendlink);
+
+        $shoplist = D('ad')->where('type="shop"')->select();
+        $this->assign('shoplist', $shoplist);
+        $erweima = D('ad')->where('type="erweima"')->select();
+        $this->assign('erweima', $erweima);
     }
 
 	/* 用户登录检测 */
