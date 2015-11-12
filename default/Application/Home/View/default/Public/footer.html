@@ -53,8 +53,9 @@
             </div>
             <div class="footer-lianxi none">
             	<h3>友情链接</h3>
-                <p>佰顺米业淘宝商城</p>
-                <p>佰顺米业淘宝商城</p>
+                <foreach name="friendlist" item="vo">
+                    <p><a href="{$vo.furl}">{$vo.fname}</a></p>
+                </foreach>
             </div>
         </div>
         <div class="coptright">

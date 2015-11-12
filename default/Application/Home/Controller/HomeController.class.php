@@ -33,6 +33,9 @@ class HomeController extends Controller {
 
         $nav = D('Channel')->lists();
         $this->assign('nav1', $nav);
+
+        $friendlink = D('friendlink')->order('sort')->select();
+        $this->assign('friendlink', $friendlink);
     }
 
 	/* 用户登录检测 */
