@@ -52,7 +52,7 @@ class FriendlinkController extends AdminController
 		if(!$res){
             $this->error(D('friendlink')->getError());
         }else{
-            $this->success($id?'更新成功':'新增成功',U('list'));
+            $this->success($id?'更新成功':'新增成功',U('lists'));
         }
 	}
 
@@ -63,7 +63,7 @@ class FriendlinkController extends AdminController
 		if(!$res){
             $this->error(D('friendlink')->getError());
         }else{
-            $this->success('删除成功',U('list'));
+            $this->success('删除成功',U('lists'));
         }
 	}
 }
