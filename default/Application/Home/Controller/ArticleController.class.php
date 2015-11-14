@@ -108,6 +108,9 @@ class ArticleController extends HomeController {
 
 		/* 获取分类信息 */
 		$category = D('Category')->info($id);
+		if($category['icon']){
+			$category['iconimg'] = D('Picture')->where('id='.$category['icon'])->getField('Path');
+		}
 		if($category && 1 == $category['status']){
 			switch ($category['display']) {
 				case 0:
