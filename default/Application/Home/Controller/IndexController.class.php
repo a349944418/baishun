@@ -18,8 +18,6 @@ class IndexController extends HomeController {
 
 	//系统首页
     public function index(){
-        D('Document')->page(!empty($_GET["p"])?$_GET["p"]:1,9)->lists($category, '`level` DESC,`id` DESC', 1,true);
-        echo D('Document')->getLastSql();
 
         $category = D('Category')->getTree();
         $lists    = D('Document')->lists(null);
