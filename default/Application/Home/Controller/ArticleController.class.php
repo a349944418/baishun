@@ -32,6 +32,7 @@ class ArticleController extends HomeController {
 	public function lists($p = 1){
 		/* 分类信息 */
 		$category = $this->category();
+		dump($category);
 
 		/* 获取当前分类列表 */
 		$Document = D('Document');
@@ -39,7 +40,7 @@ class ArticleController extends HomeController {
 		foreach( $list as $k=>$v){
 			if(!$v['description']){
 				$content = D('DocumentArticle')->where('id='.$v['id'])->getField('content');
-				$list[$k]['description'] =  msubstr(strip_tags($content), 0, 200);
+				$list[$k]['description'] =  msubstr(strip_tags($content), 0, 140);
 			}
 			if($v['cover_id']) {
 				$list[$k]['img'] = D('Picture')->where('id='.$v['cover_id'])->getField('Path');
