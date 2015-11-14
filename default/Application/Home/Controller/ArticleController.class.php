@@ -37,7 +37,14 @@ class ArticleController extends HomeController {
 		$Document = D('Document');
 		$list = $Document->page($p, $category['list_row'])->lists($category['id']);
 		foreach( $list as $k=>$v){
-			$list[$k]['description'] = $v['description'] ? $v['description'] : msubstr($v['content'], 0, 200);
+			if(!$v['description']){
+				$content = D('DocumentArticle')->where('id='.$v['id'])->getField('content');
+				$list[$k]['description'] =  msubstr($content, 0, 200);
+			}
+			if($v['cover_id']) {
+				$list[$k]['img'] = D('Picture')->where('id='.$v['cover_id'])->getField('Path');
+			}
+			
 		}
 		if(false === $list){
 			$this->error('获取列表数据失败！');
