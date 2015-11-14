@@ -76,7 +76,7 @@ class ArticleController extends HomeController {
 
 		/* 分类信息 */
 		$category = $this->category($info['category_id']);
-
+		dump($category);
 		/* 获取模板 */
 		if(!empty($info['template'])){//已定制模板
 			$tmpl = $info['template'];
