@@ -14,7 +14,7 @@
 					<h3 class="ellipsis"><a href="{:U('Article/detail?id='.$data['id'])}">{$data.title}</a></h3>
 				</div>
 				<div>
-					<p class="lead">{$data.description}</p>
+					<p class="lead">{$data.description|getShort=5}</p>
 				</div>
 				<div>
 					<span><a href="{:U('Article/detail?id='.$data['id'])}">查看全文</a></span>
