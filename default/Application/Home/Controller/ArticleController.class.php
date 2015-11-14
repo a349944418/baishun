@@ -39,7 +39,7 @@ class ArticleController extends HomeController {
 		foreach( $list as $k=>$v){
 			if(!$v['description']){
 				$content = D('DocumentArticle')->where('id='.$v['id'])->getField('content');
-				$list[$k]['description'] =  msubstr($content, 0, 200);
+				$list[$k]['description'] =  msubstr(strip_tags($content), 0, 200);
 			}
 			if($v['cover_id']) {
 				$list[$k]['img'] = D('Picture')->where('id='.$v['cover_id'])->getField('Path');
