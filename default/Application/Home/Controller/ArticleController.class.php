@@ -37,7 +37,7 @@ class ArticleController extends HomeController {
 		$Document = D('Document');
 		$list = $Document->page($p, $category['list_row'])->lists($category['id']);
 		foreach( $list as $k=>$v){
-			$list[$k]['description'] = $v['description'] ? $v['description'] : msubstr($v['description'], 0, 200);
+			$list[$k]['description'] = $v['description'] ? $v['description'] : msubstr($v['content'], 0, 200);
 		}
 		if(false === $list){
 			$this->error('获取列表数据失败！');
