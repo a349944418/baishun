@@ -32,7 +32,6 @@ class ArticleController extends HomeController {
 	public function lists($p = 1){
 		/* 分类信息 */
 		$category = $this->category();
-		dump($category);
 
 		/* 获取当前分类列表 */
 		$Document = D('Document');

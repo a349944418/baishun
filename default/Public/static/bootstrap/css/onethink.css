@@ -228,7 +228,7 @@ form .ke-container{
 
 .news_page_title {height: 42px; border-bottom:1px dashed #03680a; margin-bottom: 10px;}
 .news_page_title img {height: 42px;}
-.news_page_title .img_text {line-height: 42px; font-size: 22px; color: #c30d23;}
+.news_page_title .img_text {line-height: 42px; font-size: 27px; color: #c30d23; padding-left: 9px;}
 .ellipsis a, .ellipsis a:hover, .ellipsis a:active {font-weight:normal; color: #050505;}
 .articleOne { padding: 17px 10px 20px; border-bottom: 1px dashed #03680a;}
 .newsleft { float:left; width: 324px ;padding-right:20px;}
