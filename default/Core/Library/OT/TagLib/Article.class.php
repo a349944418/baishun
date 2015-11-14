@@ -42,6 +42,7 @@ class Article extends TagLib{
 		$parse .= '<volist name="__LIST__" id="'. $name .'">';
 		$parse .= $content;
 		$parse .= '</volist>';
+		dump($parse);
 		return $parse;
 	}
 
