@@ -51,13 +51,14 @@
             <div class="index_news clearfix">
                 <div class="index_news_left">
                     <img src="/Uploads/{$news_left}" width="" />
+                    <div class="yy"></div>
                 </div>
                 <div class="index_news_right">
                     <ul>
-                        <article:list name="article" category="41" child="false">
+                        <article:list name="news" category="41" row="9">
                             <li>
-                                <a href="{:U('Article/detail?id='.$article['id'])}">{$article.title}</a>
-                                <span class="pull-right">{$article.create_time|date='Y-m-d',###}</span>
+                                <a href="{:U('Article/detail?id='.$news['id'])}">{$news.title}</a>
+                                <span class="pull-right">{$news.create_time|date='Y-m-d',###}</span>
                             </li>
                         </article:list>
                     </ul>
@@ -87,11 +88,17 @@
             $('.goods').css({'width':(0.8*h)+'px', 'height':(0.8*h)+'px','margin-right':(0.3*h)+'px'});
             $('.goods img').css({'border-radius':(0.8*h)+'px','width':(0.8*h)+'px'});
             $('.goodslist').css({'width': parseInt(3.4*h)+'px','top':(0.1*h)+'px', 'left':zleft+'px'});
-            $('.goods .text').css({'font-size':(0.12*h)+'px', 'line-height':(0.2*h)+'px'})
+            $('.goods .text').css({'font-size':(0.1*h)+'px', 'line-height':(0.2*h)+'px'})
             $('.goods').hover(function(){
                 $(this).find('.text').css({'z-index':'1000','top':0,'left':0,'width':(0.8*h)+'px', 'height':(0.8*h)+'px','border':'none', 'border-radius':(0.8*h)+'px'});
             },function(){
                 $(this).find('.text').css({'top':(0.8*h)+'px','left':(0.8*h)+'px'})
+            })
+
+            $('.index_news_left').hover(function(){
+                $(this).find('.yy').css({'top':0})
+            },function(){
+                $(this).find('.yy').css({'top':+'511px'})
             })
         })
     </script>
