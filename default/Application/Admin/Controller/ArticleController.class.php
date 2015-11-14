@@ -213,7 +213,7 @@ class ArticleController extends AdminController {
                         }
                 }
             }
-
+            dump($grids);
             $this->assign('list_grids', $grids);
             $this->assign('model_list', $model);
             // 记录当前列表页的cookie
