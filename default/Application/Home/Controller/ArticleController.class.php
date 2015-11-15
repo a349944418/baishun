@@ -56,13 +56,10 @@ class ArticleController extends HomeController {
 		} else {
 			$cid = $curCat['id'] == $category['id'] ? $category['child']['0']['id'] : $curCat['id'];
 			$this->assign('cid', $cid);
-			dump($cid);
 			/* 根据不同模板取值 */
 			if($category['template_lists'] == 'pinpai_list') {				
 				$did = D('Document')->where('category_id='.$cid)->order('id desc')->limit(1)->getField('id');
-				dump(D('Document')->getLastSql());
-				dump($did);
-				$info = D('Document')->detail($did);
+				$info = $did ? D('Document')->detail($did) : '';
 				$this->assign('info', $info);
 				
 			}
