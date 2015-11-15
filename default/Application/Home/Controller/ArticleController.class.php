@@ -134,6 +134,7 @@ class ArticleController extends HomeController {
 			$category = $this->topCategroy($category['pid']);
 		}
 		$category['child']['child'] = $this->childCategory($id);
+		dump($category);
 		return $category;
 	}
 
