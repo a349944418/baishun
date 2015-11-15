@@ -89,8 +89,6 @@ class DocumentModel extends Model{
     public function detail($id){
         /* 获取基础数据 */
         $info = $this->field(true)->find($id);
-        dump($info);
-        die();
         if(!(is_array($info) || 1 !== $info['status'])){
             $this->error = '文档被禁用或已删除！';
             return false;
@@ -149,6 +147,8 @@ class DocumentModel extends Model{
     public function update($data = null){
     	/* 检查文档类型是否符合要求 */
     	$res = $this->checkDocumentType( I('type'), I('pid') );
+        dump($res);
+        die();
     	if(!$res['status']){
     		$this->error = $res['info'];
     		return false;
