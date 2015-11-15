@@ -36,7 +36,6 @@ class ArticleController extends HomeController {
 		$curCat = D('Category')->info(I('get.category'));
 		$this->assign('category', $category);
 
-
 		/* 获取当前分类列表 */
 		if(!$category['template_lists']){
 			$Document = D('Document');
@@ -54,16 +53,19 @@ class ArticleController extends HomeController {
 				$this->error('获取列表数据失败！');
 			}
 			$this->assign('list', $list);
+		} else {
+			$cid = $curCat['id'] == $category['id'] ? $category['child']['0']['id'] : $curCat['id'];
+			$this->assign('cid', $cid);
+			/* 根据不同模板取值 */
+			if($category['template_lists'] == 'pinpai_list') {				
+				$did = D('Document')->where('category_id='.$cid)->order('id desc')->limit(1)->getField('id');
+				$info = D('Document')->detail($did);
+				$this->assign('info', $info);
+				
+			}
 		}
 		
-		/* 根据不同模板取值 */
-		if($category['template_lists'] == 'pinpai_list') {
-			$cid = $curCat['id'] == $category['id'] ? $category['child']['0']['id'] : $curCat['id'];
-			$did = D('Document')->where('category_id='.$cid)->order('id desc')->limit(1)->getField('id');
-			$info = D('Document')->detail($did);
-			$this->assign('info', $info);
-			$this->assign('cid', $cid);
-		}
+		
 
 		$this->display($category['template_lists']);
 	}
