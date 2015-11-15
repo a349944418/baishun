@@ -133,6 +133,15 @@ class ArticleController extends HomeController {
 		if($category['pid'] != 0){
 			$category = $this->topCategroy($category['pid']);
 		}
+		$category['child']['child'] = $this->childCategory($id);
 		return $category;
+	}
+
+	/**
+	 * 获取子元素
+	 */
+	private function childCategory($id) {
+		$child = D('Category')->where('fid='.$id)->select();
+		return $child;
 	}
 }
