@@ -17,8 +17,6 @@ class ArticleController extends HomeController {
 
     /* 文档模型频道页 */
 	public function index(){
-		$this->redirect('lists');
-		die();
 		/* 分类信息 */
 		$category = $this->category();
 
@@ -46,7 +44,6 @@ class ArticleController extends HomeController {
 			if($v['cover_id']) {
 				$list[$k]['img'] = D('Picture')->where('id='.$v['cover_id'])->getField('Path');
 			}
-			
 		}
 		if(false === $list){
 			$this->error('获取列表数据失败！');
@@ -54,6 +51,7 @@ class ArticleController extends HomeController {
 
 		/* 模板赋值并渲染模板 */
 		$this->assign('category', $category);
+		$this->assign('cid', I('get.category'));
 		$this->assign('list', $list);
 		$this->display($category['template_lists']);
 	}
@@ -135,7 +133,7 @@ class ArticleController extends HomeController {
 		if($category['pid'] != 0){
 			$category = $this->topCategroy($category['pid']);
 		}
-		$category['child'] = $this->childCategory($id);
+		$category['child'] = $this->childCategory($category['id']);
 		dump($category);
 		return $category;
 	}
