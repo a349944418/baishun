@@ -12,7 +12,7 @@
             <span>|</span>
             <div>
                 <foreach item="v" name="category.child">
-                    <a href="{:U('Article/lists'), array('category'=>$v[name])" <eq name="cid" value="$v[id]">active</eq> >{$v.title}</a>
+                    <a href="{:U('Article/lists'), array('category'=>$v[name])}" <eq name="cid" value="$v[id]">active</eq> >{$v.title}</a>
                 </foreach>
             </div>
     	</div>
