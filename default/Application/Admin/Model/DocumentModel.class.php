@@ -89,6 +89,8 @@ class DocumentModel extends Model{
     public function detail($id){
         /* 获取基础数据 */
         $info = $this->field(true)->find($id);
+        dump($info);
+        die();
         if(!(is_array($info) || 1 !== $info['status'])){
             $this->error = '文档被禁用或已删除！';
             return false;
