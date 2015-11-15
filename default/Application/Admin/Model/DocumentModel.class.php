@@ -154,8 +154,6 @@ class DocumentModel extends Model{
 
         /* 获取数据对象 */
         $data = $this->create($data);
-        dump($data);
-        die();
         if(empty($data)){
             return false;
         }
@@ -177,6 +175,8 @@ class DocumentModel extends Model{
 
         /* 添加或新增扩展内容 */
         $logic = $this->logic($data['model_id']);
+        dump($logic);
+        die();
         if(!$logic->update($id)){
             if(isset($id)){ //新增失败，删除基础数据
                 $this->delete($id);
