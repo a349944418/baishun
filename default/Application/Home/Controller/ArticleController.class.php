@@ -33,26 +33,38 @@ class ArticleController extends HomeController {
 		/* 分类信息 */
 		$category = $this->category();
 
+		$curCat = D('Category')->info(I('get.category'));
+		$this->assign('category', $category);
+
+
 		/* 获取当前分类列表 */
-		$Document = D('Document');
-		$list = $Document->page($p, $category['list_row'])->lists($category['id']);
-		foreach( $list as $k=>$v){
-			if(!$v['description']){
-				$content = D('DocumentArticle')->where('id='.$v['id'])->getField('content');
-				$list[$k]['description'] =  msubstr(strip_tags($content), 0, 140);
+		if(!$category['template_lists']){
+			$Document = D('Document');
+			$list = $Document->page($p, $category['list_row'])->lists($category['id']);
+			foreach( $list as $k=>$v){
+				if(!$v['description']){
+					$content = D('DocumentArticle')->where('id='.$v['id'])->getField('content');
+					$list[$k]['description'] =  msubstr(strip_tags($content), 0, 140);
+				}
+				if($v['cover_id']) {
+					$list[$k]['img'] = D('Picture')->where('id='.$v['cover_id'])->getField('Path');
+				}
 			}
-			if($v['cover_id']) {
-				$list[$k]['img'] = D('Picture')->where('id='.$v['cover_id'])->getField('Path');
+			if(false === $list){
+				$this->error('获取列表数据失败！');
 			}
+			$this->assign('list', $list);
 		}
-		if(false === $list){
-			$this->error('获取列表数据失败！');
+		
+		/* 根据不同模板取值 */
+		if($category['template_lists'] == 'pinpai_list') {
+			$cid = $curCat['id'] == $category['id'] ? $category['child']['0']['id'] : $curCat['id'];
+			$did = D('Document')->where('category_id='.$cid)->order('id desc')->limit(1)->getField('id');
+			$info = D('Document')->detail($did);
+			$this->assign('info', $info);
+			$this->assign('cid', $cid);
 		}
 
-		/* 模板赋值并渲染模板 */
-		$this->assign('category', $category);
-		$this->assign('cid', I('get.category'));
-		$this->assign('list', $list);
 		$this->display($category['template_lists']);
 	}
 
