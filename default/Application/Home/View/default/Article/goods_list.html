@@ -19,11 +19,17 @@
             </div>
     	</div>
         <if condition="$list neq ''">
+            <style type="text/css">
+                .ck-slide, .ck-slide .ck-slide-wrapper li, .ck-slide .ck-slide-wrapper li img{width: 880px;height: 317px;}
+                .ck-slidebox ul li em { display: block; height: 12px; border-radius: 0; background-color: #fff; text-indent: -9999px; cursor: pointer; color: #000; padding: 0 3px;font-size: 10px;}
+                .ck-slidebox ul li.current em { color: #c10e23;}
+                .ck-slidebox ul li em:hover { color: #c10e23;}
+            </style>
             <div class="ck-slide" style="width: 880px; height: 500px;">
                 <ul class="ck-slide-wrapper">
                     <foreach name="list" item="vo" key="i">
                         <li style="opacity: 0; ">
-                            <a href="javascript:;"><img src="{$vo.img}" alt="{$vo.title}" style="width:880px;"></a>
+                            <a href="javascript:;"><img src="{$vo.img}" alt="{$vo.title}" ></a>
                         </li>
                     </foreach>
                 </ul>
@@ -38,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <script src="__PUBLIC__/Home/js/slide.js"></script>
+            <script src="__PUBLIC__/Home/js/slide1.js"></script>
             <script type="text/javascript">
                 $(function(){
                     $('.ck-slide').ckSlide({
