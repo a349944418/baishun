@@ -3,7 +3,7 @@
 <block name="body">
 	<div class="news_container clearfix">
     	<div class="news_page_title clearfix">
-            <div class="img_text pull-left">
+            <div class="img_text pull-left" style="line-height: 20px;">
         		<eq name="category.icon" value="0">
         			{$category.title}
         		</eq>
@@ -12,12 +12,10 @@
         		</neq>
             </div>
             <div class="pull-left gohistory">
-                <span>|</span>
-                <div>
-                    <foreach item="v" name="category.child">
-                        <a href="{:U('Article/lists'), array('category'=>$v[name])}" <eq name="cid" value="$v[id]">active</eq> >{$v.title}</a>
-                    </foreach>
-                </div>
+                <span style="margin-right: 6px; font-size: 19px;">|</span>
+                <foreach item="v" name="category.child">
+                    <a href="{:U('Article/lists', array('category'=>$v[name]))}" class="cat_menu2 <eq name="cid" value="$v[id]">cur</eq>" >{$v.title}</a>
+                </foreach>
             </div>
     	</div>
     	<h3 class="ellipsis" style="text-align: center;margin: 15px 0 10px;"><a href="javascript:;" style="font-family: 'Microsoft YaHei';">{$info.title}</a></h3>
