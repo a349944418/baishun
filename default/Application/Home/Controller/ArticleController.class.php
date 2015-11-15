@@ -77,6 +77,16 @@ class ArticleController extends HomeController {
 					$this->error('获取列表数据失败！');
 				}
 				$this->assign('list', $list);
+			} elseif ($category['template_lists'] == 'goods_list') {
+				$Document = D('Document');
+				$list = $Document->page($p, $category['list_row'])->lists($cid);
+				foreach( $list as $k=>$v){
+					$pic = D('DocumentGoods')->where('id='.$v['id'])->getField('goodspath');
+					if($pic) {
+						$list[$k]['img'] = D('Picture')->where('id='.$pic)->getField('Path');
+					}
+				}
+				$this->assign('list', $list);
 			}
 		}
 		

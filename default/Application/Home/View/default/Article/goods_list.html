@@ -1,0 +1,51 @@
+<extend name="Base/common"/>
+
+<block name="body">
+	<div class="news_container clearfix">
+    	<div class="news_page_title clearfix">
+            <div class="img_text pull-left" style="line-height: 20px;">
+        		<eq name="category.icon" value="0">
+        			{$category.title}
+        		</eq>
+        		<neq name="category.icon" value="0">
+        			<img src="{$category.iconimg}" title="{$category.title}" />
+        		</neq>
+            </div>
+            <div class="pull-left gohistory">
+                <span style="margin-right: 6px; font-size: 19px;">|</span>
+                <foreach item="v" name="category.child">
+                    <a href="{:U('Article/lists', array('category'=>$v[name]))}" class="cat_menu2 <eq name="cid" value="$v[id]">cur</eq>" >{$v.title}</a>
+                </foreach>
+            </div>
+    	</div>
+        <if condition="$list neq ''">
+            <div class="ck-slide" style="width: 880px">
+                <ul class="ck-slide-wrapper">
+                    <foreach name="list" item="vo" key="i">
+                        <li style="opacity: 0; ">
+                            <a href="javascript:;"><img src="/Uploads/{$vo.img}" alt="{$vo.title}" style="width:880px;"></a>
+                        </li>
+                    </foreach>
+                </ul>
+                <a href="javascript:;" class="ctrl-slide ck-prev" style="opacity: 0.15; ">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next" style="opacity: 0.15; ">下一张</a>
+                <div class="ck-slidebox" style="margin-left: -54px; ">
+                    <div class="slideWrap">
+                        <ul class="dot-wrap">
+                            <foreach name="list" item="vo" key="i">
+                                <li <if condition="$i eq 0">class="current"</if> ><em>{$v.title}</em></li>
+                            </foreach>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <script src="__PUBLIC__/Home/js/slide.js"></script>
+            <script type="text/javascript">
+                $(function(){
+                    $('.ck-slide').ckSlide({
+                        autoPlay: true
+                    });
+                })
+            </script>
+        </if>
+    </div>
+</block>
