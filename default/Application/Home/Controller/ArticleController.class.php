@@ -60,6 +60,8 @@ class ArticleController extends HomeController {
 			/* 根据不同模板取值 */
 			if($category['template_lists'] == 'pinpai_list') {				
 				$did = D('Document')->where('category_id='.$cid)->order('id desc')->limit(1)->getField('id');
+				dump(D('Document')->getLastSql());
+				dump($did);
 				$info = D('Document')->detail($did);
 				$this->assign('info', $info);
 				
