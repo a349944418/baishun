@@ -76,7 +76,7 @@ class ArticleController extends HomeController {
 
 		/* 分类信息 */
 		$category = $this->category($info['category_id']);
-		
+
 		/* 获取模板 */
 		if(!empty($info['template'])){//已定制模板
 			$tmpl = $info['template'];
@@ -106,7 +106,7 @@ class ArticleController extends HomeController {
 		}
 
 		/* 获取分类信息 */
-		$category = D('Category')->info($id);
+		$category = $this->topCategroy($id);
 		if($category['icon']){
 			$category['iconimg'] = D('Picture')->where('id='.$category['icon'])->getField('Path');
 		}
@@ -124,4 +124,15 @@ class ArticleController extends HomeController {
 		}
 	}
 
+	/**
+	 * 获取顶级category
+	 */
+	private function topCategroy($id) {
+		$category = D('Category')->info($id);
+		
+		if($category['pid'] != 0){
+			$category = $this->topCategroy($category['pid']);
+		}
+		return $category;
+	}
 }
