@@ -142,7 +142,7 @@ class ArticleController extends HomeController {
 	 * 获取子元素
 	 */
 	private function childCategory($id) {
-		$child = D('Category')->where('fid='.$id)->select();
+		$child = D('Category')->where('pid='.$id)->select();
 		return $child;
 	}
 }
