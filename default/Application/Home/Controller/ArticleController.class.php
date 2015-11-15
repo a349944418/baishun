@@ -133,7 +133,7 @@ class ArticleController extends HomeController {
 		if($category['pid'] != 0){
 			$category = $this->topCategroy($category['pid']);
 		}
-		$category['child']['child'] = $this->childCategory($id);
+		$category['child'] = $this->childCategory($id);
 		dump($category);
 		return $category;
 	}
