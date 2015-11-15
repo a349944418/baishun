@@ -60,8 +60,23 @@ class ArticleController extends HomeController {
 			if($category['template_lists'] == 'pinpai_list') {				
 				$did = D('Document')->where('category_id='.$cid)->order('id desc')->limit(1)->getField('id');
 				$info = $did ? D('Document')->detail($did) : '';
-				$this->assign('info', $info);
-				
+				$this->assign('info', $info);				
+			} elseif ($category['template_lists'] == 'yingyang_list') {
+				$Document = D('Document');
+				$list = $Document->page($p, $category['list_row'])->lists($cid);
+				foreach( $list as $k=>$v){
+					if(!$v['description']){
+						$content = D('DocumentArticle')->where('id='.$v['id'])->getField('content');
+						$list[$k]['description'] =  msubstr(strip_tags($content), 0, 140);
+					}
+					if($v['cover_id']) {
+						$list[$k]['img'] = D('Picture')->where('id='.$v['cover_id'])->getField('Path');
+					}
+				}
+				if(false === $list){
+					$this->error('获取列表数据失败！');
+				}
+				$this->assign('list', $list);
 			}
 		}
 		
