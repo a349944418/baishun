@@ -86,7 +86,6 @@ class ArticleController extends HomeController {
 						$list[$k]['img'] = D('Picture')->where('id='.$pic)->getField('Path');
 					}
 				}
-				dump($list);
 				$this->assign('list', $list);
 			}
 		}

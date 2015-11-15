@@ -19,11 +19,11 @@
             </div>
     	</div>
         <if condition="$list neq ''">
-            <div class="ck-slide" style="width: 880px">
+            <div class="ck-slide" style="width: 880px; height: 500px;">
                 <ul class="ck-slide-wrapper">
                     <foreach name="list" item="vo" key="i">
                         <li style="opacity: 0; ">
-                            <a href="javascript:;"><img src="/Uploads/{$vo.img}" alt="{$vo.title}" style="width:880px;"></a>
+                            <a href="javascript:;"><img src="{$vo.img}" alt="{$vo.title}" style="width:880px;"></a>
                         </li>
                     </foreach>
                 </ul>
