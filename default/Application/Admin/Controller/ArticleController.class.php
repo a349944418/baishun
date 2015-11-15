@@ -408,10 +408,10 @@ class ArticleController extends AdminController {
         if(empty($id)){
             $this->error('参数不能为空！');
         }
-
+        
         /*获取一条记录的详细数据*/
         $Document = D('Document');
-        $data = $Document->detail($id);
+        //$data = $Document->detail($id);
         if(!$data){
             $this->error($Document->getError());
         }
