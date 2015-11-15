@@ -147,8 +147,6 @@ class DocumentModel extends Model{
     public function update($data = null){
     	/* 检查文档类型是否符合要求 */
     	$res = $this->checkDocumentType( I('type'), I('pid') );
-        dump($res);
-        die();
     	if(!$res['status']){
     		$this->error = $res['info'];
     		return false;
@@ -156,6 +154,8 @@ class DocumentModel extends Model{
 
         /* 获取数据对象 */
         $data = $this->create($data);
+        dump($data);
+        die();
         if(empty($data)){
             return false;
         }
