@@ -37,8 +37,8 @@ a:hover, a:active{text-decoration: none;}
 .huobantitle {width: 1120px; height: 35px; padding-top:55px; background:url(../../../Home/images/huoban_relation.jpg);}
 .huoban_relation { margin-left: 656px; color: #005907;font-size: 20px;}
 .huobanlist {margin: 5px 90px 15px; }
-.huobanitem {float: left; width: 16%; height: 16%; margin: 0.5%; }
-.huoban2, .huoban7 {width: 30%; height: 16%;}
+.huobanitem {float: left; width: 16%; margin: 0.5%; }
+.huoban2, .huoban7 {width: 30%; }
 .huobanitem img {width: 100%; height: 100%;}
 img { border: 0;}
 .ck-slide ul { margin: 0; padding: 0; list-style-type: none;}
