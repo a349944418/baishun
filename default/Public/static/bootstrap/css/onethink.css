@@ -28,7 +28,7 @@ body > .navbar {margin-bottom: 0;}
 .index_news {padding-top: 20px}
 .index_news_left {background: url(../../../Home/images/index_news_left.png);width: 440px; height: 221px; float: left;padding:10px 34px 33px 21px; margin-left: 100px;overflow: hidden; position: relative;margin-top:20px;}
 .index_news_left img {width: 453px;height: 244px;}
-.index_news_left .yy {width: 453px; height: 244px; position: absolute; top:300px; background-color:#000; FILTER:alpha(opacity=50); opacity:0.5; -moz-opacity:0.5; z-index: 1;}
+.index_news_left .yy {width: 440px; height: 244px; position: absolute; top:300px; background-color:#000; FILTER:alpha(opacity=50); opacity:0.5; -moz-opacity:0.5; z-index: 1;}
 .index_news_right {margin-top: 18px;padding: 5px 10px; background: #fdfcfa; width: 360px; height: 260px; float: left;}
 .index_news_right li {line-height: 28px;height: 28px;}
 .index_news_right li a, .index_news_right li span {color: #494949; font-size: 14px;}
