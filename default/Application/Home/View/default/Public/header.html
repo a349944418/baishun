@@ -48,9 +48,9 @@
                                 <div class="subnav_block">
                                     <foreach name="shoplist" item="vo" key="i">
                                         <div class="subshopnav_content" >
-                                            <h4>{$vo.title}</h4>
+                                            <a href="{$vo.url}" target="_blank"><h4>{$vo.title}</h4></a>
                                             <neq name="vo.img" value="">
-                                                <img src="/Uploads/{$vo.img}" style="width:164px;height:164px;">
+                                                <a href="{$vo.url}" target="_blank"><img src="/Uploads/{$vo.img}" style="width:164px;height:164px;"></a>
                                             </neq>                                     
                                         </div>
                                     </foreach>
