@@ -26,7 +26,7 @@ body > .navbar {margin-bottom: 0;}
 .subnav_content2 {display:none;}
 .subnav_block .subnav_title a:hover, .subnav_block .subnav_title a:active{text-decoration: none;}
 .index_news {padding-top: 20px}
-.index_news_left {background: url(../../../Home/images/index_news_left.png);width: 453px; height: 244px; float: left;padding:24px 30px 29px 25px; margin-left: 100px;overflow: hidden; position: relative;}
+.index_news_left {background: url(../../../Home/images/index_news_left.png);width: 440px; height: 221px; float: left;padding:10px 34px 33px 21px; margin-left: 100px;overflow: hidden; position: relative;margin-top:20px;}
 .index_news_left img {width: 453px;height: 244px;}
 .index_news_left .yy {width: 453px; height: 244px; position: absolute; top:300px; background-color:#000; FILTER:alpha(opacity=50); opacity:0.5; -moz-opacity:0.5; z-index: 1;}
 .index_news_right {margin-top: 18px;padding: 5px 10px; background: #fdfcfa; width: 360px; height: 260px; float: left;}
