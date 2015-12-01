@@ -1,0 +1,78 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<style >
+		.index_news_left {
+		    width: 100px;
+		    height: 100px;
+		    float: left;
+		    margin-left: 50px;
+		}
+		#img1 {
+			width: 100px;
+			height: 100px;
+		}
+	</style>
+	<!-- 标题栏 -->
+	<div class="main-title">
+		<h2>首页视频</h2>
+	</div>
+    <div class="clearfix">
+    	<div class="index_news_left">
+    		<img id="img1" src="/Uploads/{$img}" <if condition="$img eq ''">style="display:none"</if>>
+    	</div>
+    	<div>
+    		<form action="{:U('Ad/save_video')}" method="post" class="form-horizontal">
+    			<input type="hidden" name="id" value="{$id}">
+		    	<div class="form-item">
+					<label class="item-label">上传视频<span class="check-tips"></span> mp4格式，大小不超过5M</label>
+					<div class="controls">
+						<input type="file" id="file1" name="file"><br />
+					</div>
+					<input type="hidden" name="img" value="{$img}" >
+				</div>
+				<div class="form-item">
+					<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+					<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+				</div>
+			</form>
+    	</div>
+    </div>
+    <div style="clear:both"></div>
+</block>
+<block name="script">
+<script type="text/javascript" charset="utf-8">
+	//导航高亮
+	highlight_subnav('{:U('index')}');
+</script>
+<script type="text/javascript" src="__JS__/ajaxfileupload.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#file1').change(function(){
+			$.ajaxFileUpload ({
+                url: '{:U("Admin/Upload/video")}', //用于文件上传的服务器端请求地址
+                secureuri: false, //是否需要安全协议，一般设置为false
+                fileElementId: 'file1', //文件上传域的ID
+                dataType: 'json', //返回值类型 一般设置为json
+                success: function (data, status)  //服务器成功响应处理函数
+                {                   
+                    if (typeof (data.error) != 'undefined') {
+                        if (data.error != '') {
+                            alert(data.error);
+                        } else {
+
+                        	$("#img1").attr("src", '/Uploads/'+data.imgurl).css('display', 'block');
+                        	$('input[name="img"]').val(data.imgurl);
+                        }
+                    }
+                },
+                error: function (data, status, e)//服务器响应失败处理函数
+                {
+                    alert(e);
+                }
+            })
+            return false;
+		})
+	})
+</script>
+</block>
