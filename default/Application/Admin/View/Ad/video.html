@@ -18,9 +18,26 @@
 		<h2>首页视频</h2>
 	</div>
     <div class="clearfix">
-    	<div class="index_news_left">
+    	<!-- <div class="index_news_left">
     		<img id="img1" src="/Uploads/{$img}" <if condition="$img eq ''">style="display:none"</if>>
-    	</div>
+    	</div> -->
+    	<div id="a1" class="index_news_left"></div>
+		<script type="text/javascript" src="__PUBLIC__/ckplayer/ckplayer.js" charset="utf-8"></script>
+		<script type="text/javascript">
+			var flashvars={
+				f:'/Uploads/{$img}',
+				c:0,
+				b:1
+				};
+			var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+			CKobject.embedSWF('/Public/ckplayer/ckplayer.swf','a1','ckplayer_a1','600','400',flashvars,params);	
+			function closelights(){//关灯
+				alert(' 本演示不支持开关灯');
+			}
+			function openlights(){//开灯
+				alert(' 本演示不支持开关灯');
+			}
+		</script>
     	<div>
     		<form action="{:U('Ad/save_video')}" method="post" class="form-horizontal">
     			<input type="hidden" name="id" value="{$id}">
