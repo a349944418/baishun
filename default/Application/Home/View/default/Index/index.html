@@ -46,6 +46,7 @@
 </block>
 
 <block name="body">
+<if condition="$video neq ''">
     <div id="a1" style="position:fixed;left:0;top:0;z-index:999999999;"></div>
     <script type="text/javascript" src="__PUBLIC__/ckplayer/ckplayer.js" charset="utf-8"></script>
     <script type="text/javascript">
@@ -63,6 +64,7 @@
             $('#a1').css('display', 'none');
         }
     </script>
+</if>
     <!-- zbq 新闻 -->
     <div class="container">
         <div class="row">
