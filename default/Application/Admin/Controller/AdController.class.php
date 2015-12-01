@@ -175,4 +175,21 @@ class AdController extends AdminController
 		$this->assign('id', $info['ad_id']);
 		$this->display('video');
 	}
+
+	public function save_video()
+	{
+		$post = I('post.');
+		if($post['id']){			
+			$res = D('ad')->where('ad_id='.$post['id'])->save($post);
+		} else {
+			$post['type'] = 'video';
+			$res = D('ad')->add($post);
+		}
+		
+		if($res){
+			$this->success('保存成功',U('video'));
+		}else{
+			$this->error('保存失败');
+		}
+	}
 }
