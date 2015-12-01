@@ -50,13 +50,14 @@
     <script type="text/javascript" src="__PUBLIC__/ckplayer/ckplayer.js" charset="utf-8"></script>
     <script type="text/javascript">
         var zhh = $(window).height();
+        var zww = $(window).width();
         var flashvars={
             f:'/Uploads/{$video}',
             c:0,
             b:1
             };
         var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
-        CKobject.embedSWF('/Public/ckplayer/ckplayer.swf','a1','ckplayer_a1','100%',zhh,flashvars,params); 
+        CKobject.embedSWF('/Public/ckplayer/ckplayer.swf','a1','ckplayer_a1',zww,zhh,flashvars,params); 
     </script>
     <!-- zbq 新闻 -->
     <div class="container">
