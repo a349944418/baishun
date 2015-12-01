@@ -3,14 +3,10 @@
 <block name="body">
 	<style >
 		.index_news_left {
-		    width: 100px;
-		    height: 100px;
+		    width: 700px;
+		    height: 400px;
 		    float: left;
 		    margin-left: 50px;
-		}
-		#img1 {
-			width: 100px;
-			height: 100px;
 		}
 	</style>
 	<!-- 标题栏 -->
@@ -22,16 +18,6 @@
     		<img id="img1" src="/Uploads/{$img}" <if condition="$img eq ''">style="display:none"</if>>
     	</div> -->
     	<div id="a1" class="index_news_left"></div>
-		<script type="text/javascript" src="__PUBLIC__/ckplayer/ckplayer.js" charset="utf-8"></script>
-		<script type="text/javascript">
-			var flashvars={
-				f:'/Uploads/{$img}',
-				c:0,
-				b:1
-				};
-			var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
-			CKobject.embedSWF('/Public/ckplayer/ckplayer.swf','a1','ckplayer_a1','600','400',flashvars,params);	
-		</script>
     	<div>
     		<form action="{:U('Ad/save_video')}" method="post" class="form-horizontal">
     			<input type="hidden" name="id" value="{$id}">
@@ -52,6 +38,16 @@
     <div style="clear:both"></div>
 </block>
 <block name="script">
+	<script type="text/javascript" src="__PUBLIC__/ckplayer/ckplayer.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		var flashvars={
+			f:'/Uploads/{$img}',
+			c:0,
+			b:1
+			};
+		var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+		CKobject.embedSWF('/Public/ckplayer/ckplayer.swf','a1','ckplayer_a1','600','400',flashvars,params);	
+	</script>
 <script type="text/javascript" charset="utf-8">
 	//导航高亮
 	highlight_subnav('{:U('index')}');
