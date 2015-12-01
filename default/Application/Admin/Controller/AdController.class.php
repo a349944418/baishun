@@ -170,7 +170,7 @@ class AdController extends AdminController
 
 	public function video()
 	{
-		$info = $info = D('ad')->field('img, ad_id')->where('type="video"')->find();
+		$info = D('ad')->field('img, ad_id')->where('type="video"')->find();
 		$this->assign('img', $info['img']);
 		$this->assign('id', $info['ad_id']);
 		$this->display('video');

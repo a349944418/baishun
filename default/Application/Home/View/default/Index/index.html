@@ -1,6 +1,17 @@
 <extend name="Base/common"/>
 
 <block name="header">
+    <div id="a1"></div>
+    <script type="text/javascript" src="__PUBLIC__/ckplayer/ckplayer.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        var flashvars={
+            f:'/Uploads/{$video}',
+            c:0,
+            b:1
+            };
+        var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+        CKobject.embedSWF('/Public/ckplayer/ckplayer.swf','a1','ckplayer_a1','100%','100%',flashvars,params); 
+    </script>
     <style type="text/css">
         .goodsback {position: relative; margin: 25px 0;}
         .goods {float: left; margin-right: 15px; position: relative; overflow: hidden;}

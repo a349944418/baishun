@@ -67,9 +67,8 @@
                         if (data.error != '') {
                             alert(data.error);
                         } else {
-
-                        	$("#img1").attr("src", '/Uploads/'+data.imgurl).css('display', 'block');
                         	$('input[name="img"]').val(data.imgurl);
+                        	alert('上传完成');
                         }
                     }
                 },
