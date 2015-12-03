@@ -48,8 +48,7 @@
 				        }
 				    });
 					function uploadPicture(file, data){
-						alert(data);
-						console.log(file);
+						var data = $.parseJSON(data);
 						if (typeof (data.error) != 'undefined') {
 	                        if (data.error != '') {
 	                            updateAlert(data.error);
@@ -99,34 +98,5 @@
 <script type="text/javascript" charset="utf-8">
 	//导航高亮
 	highlight_subnav('{:U('index')}');
-</script>
-<script type="text/javascript" src="__JS__/ajaxfileupload.js"></script>
-<script type="text/javascript">
-	$(function(){
-		$('#file1').change(function(){
-			$.ajaxFileUpload ({
-                url: '{:U("Admin/Upload/video")}', //用于文件上传的服务器端请求地址
-                secureuri: false, //是否需要安全协议，一般设置为false
-                fileElementId: 'file1', //文件上传域的ID
-                dataType: 'json', //返回值类型 一般设置为json
-                success: function (data, status)  //服务器成功响应处理函数
-                {                   
-                    if (typeof (data.error) != 'undefined') {
-                        if (data.error != '') {
-                            alert(data.error);
-                        } else {
-                        	$('input[name="img"]').val(data.imgurl);
-                        	alert('上传完成');
-                        }
-                    }
-                },
-                error: function (data, status, e)//服务器响应失败处理函数
-                {
-                    alert(e);
-                }
-            })
-            return false;
-		})
-	})
 </script>
 </block>
