@@ -56,6 +56,6 @@ class UploadController extends AdminController
 	    	//dump($info);
 	        $return['imgurl'] = $info['file']['savepath'].$info['file']['savename'];
 	    }
-	    echo json_encode($return);
+	    $this->ajaxReturn($return);
 	}
 }
