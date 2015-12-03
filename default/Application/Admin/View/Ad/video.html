@@ -38,7 +38,7 @@
 				        "swf"             : "__STATIC__/uploadify/uploadify.swf",
 				        "fileObjName"     : "download",
 				        "buttonText"      : "上传视频",
-				        "uploader"        : "{:U('File/upload',array('session_id'=>session_id()))}",
+				        "uploader"        : "{:U('Admin/Upload/video')}",
 				        "width"           : 120,
 				        'removeTimeout'	  : 1,
 				        'fileTypeExts'	  : '*.mp4;',
@@ -48,18 +48,29 @@
 				        }
 				    });
 					function uploadPicture(file, data){
-				    	var data = $.parseJSON(data);
-				    	var src = '';
-				        if(data.status){
-				        	src = data.url;
-				        	$("input['name=img']").val(data.src);
-				        } else {
-				        	updateAlert(data.info);
-				        	setTimeout(function(){
-				                $('#top-alert').find('button').click();
-				                $(that).removeClass('disabled').prop('disabled',false);
-				            },1500);
-				        }
+						if (typeof (data.error) != 'undefined') {
+	                        if (data.error != '') {
+	                            updateAlert(data.error);
+				        		setTimeout(function(){
+					                $('#top-alert').find('button').click();
+					                $(that).removeClass('disabled').prop('disabled',false);
+					            },1500);
+	                        } else {
+	                        	$('input[name="img"]').val(data.imgurl);
+	                        }
+	                    }
+				    	// var data = $.parseJSON(data);
+				    	// var src = '';
+				     //    if(data.status){
+				     //    	src = data.url;
+				     //    	$("input['name=img']").val(src);
+				     //    } else {
+				     //    	updateAlert(data.info);
+				     //    	setTimeout(function(){
+				     //            $('#top-alert').find('button').click();
+				     //            $(that).removeClass('disabled').prop('disabled',false);
+				     //        },1500);
+				     //    }
 				    }
 				</script>
 				<div class="form-item">
