@@ -48,6 +48,8 @@
 				        }
 				    });
 					function uploadPicture(file, data){
+						alert(data);
+						console.log(file);
 						if (typeof (data.error) != 'undefined') {
 	                        if (data.error != '') {
 	                            updateAlert(data.error);
@@ -56,6 +58,7 @@
 					                $(that).removeClass('disabled').prop('disabled',false);
 					            },1500);
 	                        } else {
+	                        	alert(1);
 	                        	$('input[name="img"]').val(data.imgurl);
 	                        }
 	                    }
