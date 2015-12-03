@@ -24,7 +24,7 @@
 		    	<div class="form-item">
 					<label class="item-label">上传视频<span class="check-tips"></span> mp4格式，大小不超过10M</label>
 					<div class="controls">
-						<input type="file" id="file1" name="file"><br />
+						<!-- <input type="file" id="file1" name="file"><br /> -->
 						<input type="file" id="upload_picture">
 					</div>
 					<input type="hidden" name="img" value="{$img}" >
@@ -51,10 +51,14 @@
 				    	var data = $.parseJSON(data);
 				    	var src = '';
 				        if(data.status){
-				        	src = data.url || '__ROOT__' + data.path;
+				        	src = data.url;
 				        	$("input['name=img']").val(data.src);
 				        } else {
 				        	updateAlert(data.info);
+				        	setTimeout(function(){
+				                $('#top-alert').find('button').click();
+				                $(that).removeClass('disabled').prop('disabled',false);
+				            },1500);
 				        }
 				    }
 				</script>
