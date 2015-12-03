@@ -50,7 +50,6 @@ class UploadController extends AdminController
 	    $upload->savePath  =     'Video/'; // 设置附件上传（子）目录
 	    // 上传文件 
 	    $info   =   $upload->upload();
-	    dump($info);
 	    if(!$info) {// 上传错误提示错误信息
 	        $return['error'] = $upload->getError();
 	    }else{// 上传成功
