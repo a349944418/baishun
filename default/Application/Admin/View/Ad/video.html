@@ -25,9 +25,38 @@
 					<label class="item-label">上传视频<span class="check-tips"></span> mp4格式，大小不超过10M</label>
 					<div class="controls">
 						<input type="file" id="file1" name="file"><br />
+						<input type="file" id="upload_picture">
 					</div>
 					<input type="hidden" name="img" value="{$img}" >
 				</div>
+				<script type="text/javascript">
+					//上传图片
+				    /* 初始化上传插件 */
+					$("#upload_picture").uploadify({
+				        "height"          : 30,
+				        "swf"             : "__STATIC__/uploadify/uploadify.swf",
+				        "fileObjName"     : "download",
+				        "buttonText"      : "上传图片",
+				        "uploader"        : "{:U('File/upload',array('session_id'=>session_id()))}",
+				        "width"           : 120,
+				        'removeTimeout'	  : 1,
+				        'fileTypeExts'	  : '*.mp4;',
+				        "onUploadSuccess" : uploadPicture,
+				        'onFallback' : function() {
+				            alert('未检测到兼容版本的Flash.');
+				        }
+				    });
+					function uploadPicture(file, data){
+				    	var data = $.parseJSON(data);
+				    	var src = '';
+				        if(data.status){
+				        	src = data.url || '__ROOT__' + data.path;
+				        	$("input['name=img']").val(data.src);
+				        } else {
+				        	updateAlert(data.info);
+				        }
+				    }
+				</script>
 				<div class="form-item">
 					<button class="btn submit-btn ajax-post" id="submit" type="submit" target-form="form-horizontal">确 定</button>
 					<button class="btn btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
