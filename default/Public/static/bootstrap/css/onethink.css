@@ -7,7 +7,7 @@ body > .navbar {margin-bottom: 0;}
     box-shadow: 0 0px 0px }
 .navbar .nav > li, .navbar .shop > li { padding: 55px 0 19px; position: relative;}
 .navbar .nav > li > a, .navbar .shop > li > a { line-height: 32px; padding: 0 15px; margin: 4px 0 ; font-size: 20px; font-family: '微软雅黑'; text-shadow: 0 0; color: #016b07;}
-.navbar .nav > li > a:focus, .navbar .nav > li > a:hover,.navbar .shop > li > a:focus, .navbar .shop > li > a:hover { color: #c30d23;}
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover, .navbar .shop > li > a:focus, .navbar .shop > li > a:hover{ color: #c30d23;}
 .navbar .shop > li > a {display: inline-block; }
 .navbar .shop > li > a:focus, .navbar .shop > li > a:hover { text-decoration: none;}
 .subnav { position: absolute;left: -40px;width:433px;z-index: 10000; display: none;}
