@@ -69,9 +69,7 @@ class ArticleController extends HomeController {
 						$content = D('DocumentArticle')->where('id='.$v['id'])->getField('content');
 						$list[$k]['description'] =  msubstr(strip_tags($content), 0, 140);
 					}
-					$v['description'] =  str_replace('\br',"<br />",$v['description']);
-					dump(123);
-					dump($v['description']);
+					$list[$k]['description'] =  str_replace('\br',"<br />",$v['description']);
 					if($v['cover_id']) {
 						$list[$k]['img'] = D('Picture')->where('id='.$v['cover_id'])->getField('Path');
 					}
