@@ -70,6 +70,8 @@ class ArticleController extends HomeController {
 						$list[$k]['description'] =  msubstr(strip_tags($content), 0, 140);
 					}
 					$v['description'] =  str_replace('\n',"<br />",$v['description']);
+					dump(123);
+					dump($v['description']);
 					if($v['cover_id']) {
 						$list[$k]['img'] = D('Picture')->where('id='.$v['cover_id'])->getField('Path');
 					}
