@@ -46,25 +46,6 @@
 </block>
 
 <block name="body">
-<if condition="$video neq ''">
-    <div id="a1" style="position:fixed;left:0;top:0;z-index:999999999;"></div>
-    <script type="text/javascript" src="__PUBLIC__/ckplayer/ckplayer.js" charset="utf-8"></script>
-    <script type="text/javascript">
-        var zhh = $(window).height();
-        var zww = $(window).width();
-        var flashvars={
-            f:'/Uploads/{$video}',
-            c:0,
-            p:1,
-            e:0
-            };
-        var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
-        CKobject.embedSWF('/Public/ckplayer/ckplayer.swf','a1','ckplayer_a1',zww,zhh,flashvars,params); 
-        function playerstop(){
-            $('#a1').fadeOut("slow");
-        }
-    </script>
-</if>
     <!-- zbq 新闻 -->
     <div class="container">
         <div class="row">

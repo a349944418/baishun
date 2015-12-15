@@ -34,8 +34,6 @@ class IndexController extends HomeController {
 		$goodsback = D('ad')->where('type="goodsback"')->select();
 		$this->assign('goods', $goods);
 		$this->assign('goodsback', $goodsback);
-        $video = D('ad')->where('type="video"')->getField('img');
-        $this->assign('video', $video);
 
 		$huoban = D('ad')->where('type="huoban"')->order('sort')->select();
 		$this->assign('huoban', $huoban);
