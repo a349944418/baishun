@@ -1307,3 +1307,45 @@ function filter_exp(&$value){
 function in_array_case($value,$array){
     return in_array(strtolower($value),array_map('strtolower',$array));
 }
+
+/**
+* 检查是否是以手机浏览器进入(IN_MOBILE)
+*/
+function isMobile() {
+    $mobile = array();
+    static $mobilebrowser_list ='Mobile|iPhone|Android|WAP|NetFront|JAVA|OperasMini|UCWEB|WindowssCE|Symbian|Series|webOS|SonyEricsson|Sony|BlackBerry|Cellphone|dopod|Nokia|samsung|PalmSource|Xphone|Xda|Smartphone|PIEPlus|MEIZU|MIDP|CLDC';
+    //note 获取手机浏览器
+    if(preg_match("/$mobilebrowser_list/i", $_SERVER['HTTP_USER_AGENT'], $mobile)) {
+        return true;
+    }else{
+        if(preg_match('/(mozilla|chrome|safari|opera|m3gate|winwap|openwave)/i', $_SERVER['HTTP_USER_AGENT'])) {
+            return false;
+        }else{
+            if($_GET['mobile'] === 'yes') {
+                return true;
+            }else{
+                return false;
+            }
+        }
+    }
+}
+
+function isiPhone()
+{
+    return strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false;
+}
+
+function isiPad()
+{
+    return strpos($_SERVER['HTTP_USER_AGENT'], 'iPad') !== false;
+}
+
+function isiOS()
+{
+    return isiPhone() || isiPad();
+}
+
+function isAndroid()
+{
+    return strpos($_SERVER['HTTP_USER_AGENT'], 'Android') !== false;
+}

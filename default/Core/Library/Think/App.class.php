@@ -50,7 +50,16 @@ class App {
      * @return void
      */
     static public function exec() {
-    
+        // 使用手持设备时, 对用户的访问默认跳转至移动版, 除非用户指定访问普通版
+        if ( $_SESSION['wap_to_normal'] != '1' && cookie('wap_to_normal') != '1' && $_REQUEST['wap_to_normal'] != '1' && !isiPad()) {
+            if ( isMobile()) {
+                // 智能手机到3G版
+                if ( isiPhone() || isAndroid()) { // iOS和Android跳转至3G版
+                    U('wap/Index/index', '', true);
+                }
+            }
+        }
+        
         if(!preg_match('/^[A-Za-z](\/|\w)*$/',CONTROLLER_NAME)){ // 安全检测
             $module  =  false;
         }elseif(C('ACTION_BIND_CLASS')){
