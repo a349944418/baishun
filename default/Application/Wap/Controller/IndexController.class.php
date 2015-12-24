@@ -20,12 +20,12 @@ class IndexController extends HomeController {
     public function index(){
         echo 1;
         die();
-        $category = D('Category')->getTree();
-        $lists    = D('Document')->lists(null);
+        $category = D('\Home\Model\Category')->getTree();
+        $lists    = D('\Home\Model\Document')->lists(null);
 
         $this->assign('category',$category);//栏目
         $this->assign('lists',$lists);//列表
-        $this->assign('page',D('Document')->page);//分页
+        $this->assign('page',D('\Home\Model\Document')->page);//分页
 
         $huandeng = D('ad')->where('type="huandeng"')->select();
         $this->assign('huandeng', $huandeng);
