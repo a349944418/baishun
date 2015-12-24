@@ -55,7 +55,7 @@ class App {
             if ( isMobile()) {
                 // 智能手机到3G版
                 if ( isiPhone() || isAndroid()) { // iOS和Android跳转至3G版
-                    U('wap/Index/index', '', true);
+                    redirect('/Wap/Index/index', 0, '')
                 }
             }
         }
