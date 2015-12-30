@@ -129,12 +129,12 @@ class ArticleController extends HomeController {
 		/* 更新浏览数 */
 		$map = array('id' => $id);
 		$Document->where($map)->setInc('view');
-		dump($category);
+
+		$this->assign('menu_act', $category['name']);
 		/* 模板赋值并渲染模板 */
 		$this->assign('category', $category);
 		$this->assign('info', $info);
 		$this->assign('page', $p); //页码
-		dump($tmp);
 		$this->display($tmpl);
 	}
 
