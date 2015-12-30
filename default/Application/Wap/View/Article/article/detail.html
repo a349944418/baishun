@@ -10,7 +10,7 @@
     		<neq name="category.icon" value="0">
     			<img src="{$category.iconimg}" title="{$category.title}" />
     		</neq>
-    		<div class="pull-right gohistory" style="margin-top:8px;"><a href="javascript:;" onclick="history.go(-1);">返回>></a></div>
+    		<div class="pull-right gohistory" style="margin-top:8px;"><a href="{:U('Article/lists?category='.$category['name'])}" >返回>></a></div>
     	</div>
     	<h3 class="ellipsis" style="text-align: center;margin: 15px 0 10px;"><a href="javascript:;" style="font-family: 'Microsoft YaHei';color:#000;font-size:1rem;">{$info.title}</a></h3>
 		<div class="newstatus" style="text-align:center" style="text-align:center; font-size: 0.4rem;">
