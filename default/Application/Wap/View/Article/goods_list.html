@@ -1,0 +1,62 @@
+<extend name="Base/common"/>
+
+<block name="body">
+	<div class="news_container clearfix">
+    	<div class="news_page_title clearfix">
+            <div class="img_text pull-left" style="line-height: 20px;">
+        		<eq name="category.icon" value="0">
+        			{$category.title}
+        		</eq>
+        		<neq name="category.icon" value="0">
+        			<img src="{$category.iconimg}" title="{$category.title}" />
+        		</neq>
+            </div>
+            <div class="pull-left gohistory">
+                <span style="margin-right: 6px; font-size: 19px;">|</span>
+                <foreach item="v" name="category.child">
+                    <a href="{:U('Article/lists', array('category'=>$v[name]))}" class="cat_menu2 <eq name="cid" value="$v[id]">cur</eq>" >{$v.title}</a>
+                </foreach>
+            </div>
+    	</div>
+        <section id="contents" style="padding-bottom: 20px; border-bottom: 1px dashed #03680a;">
+            <if condition="$list neq ''">
+                <style type="text/css">
+                    .ck-slide, .ck-slide .ck-slide-wrapper li, .ck-slide .ck-slide-wrapper li img{width: 880px;height: 317px;}
+                    .ck-slidebox {right: 2px; bottom: -7px;}
+                    .ck-slidebox ul { height: 30px; padding: 0 4px; border-radius: 8px; }
+                    .ck-slidebox ul li { float: left; height: 22px; margin: 4px 4px;}
+                    .ck-slidebox ul li em { display: block; height: 22px; width: auto;border-radius: 0;  text-indent: 0px; cursor: pointer; color: #000; padding: 0 3px;font-size: 16px; line-height: 22px; background: none;}
+                    .ck-slidebox ul li.current em { color: #c10e23; background: none;}
+                    .ck-slidebox ul li em:hover { color: #c10e23; background: none;}
+                </style>
+                <div class="ck-slide" style="margin-top: 15px;">
+                    <ul class="ck-slide-wrapper">
+                        <foreach name="list" item="vo" key="i">
+                            <li style="opacity: 0; ">
+                                <a href="javascript:;"><img src="{$vo.img}" alt="{$vo.title}" ></a>
+                            </li>
+                        </foreach>
+                    </ul>
+                    <a href="javascript:;" class="ctrl-slide ck-prev" style="opacity: 0.15; ">上一张</a> <a href="javascript:;" class="ctrl-slide ck-next" style="opacity: 0.15; ">下一张</a>
+                    <div class="ck-slidebox" style="margin-left: -54px; ">
+                        <div class="slideWrap">
+                            <ul class="dot-wrap">
+                                <foreach name="list" item="vo" key="i">
+                                    <li <if condition="$i eq 0">class="current"</if> ><em>{$vo.title}</em></li>
+                                </foreach>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <script src="__PUBLIC__/Home/js/slide1.js"></script>
+                <script type="text/javascript">
+                    $(function(){
+                        $('.ck-slide').ckSlide({
+                            autoPlay: true
+                        });
+                    })
+                </script>
+            </if>
+        </div>
+    </div>
+</block>

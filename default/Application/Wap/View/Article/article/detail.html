@@ -1,0 +1,21 @@
+<extend name="Base/common"/>
+
+<block name="body">
+	<div class="news_container clearfix">
+    	<div class="news_page_title clearfix">
+    		<eq name="category.icon" value="0">
+    			<div class="img_text pull-left">{$category.title}</div>
+    		</eq>
+    		<neq name="category.icon" value="0">
+    			<img src="{$category.iconimg}" title="{$category.title}" />
+    		</neq>
+    		<div class="pull-right gohistory"><a href="javascript:history.go(-1);">返回>></a></div>
+    	</div>
+    	<h3 class="ellipsis" style="text-align: center;margin: 15px 0 10px;"><a href="javascript:;" style="font-family: 'Microsoft YaHei';">{$info.title}</a></h3>
+		<div class="newstatus" style="text-align:center">
+			<span>更新日期：{$info.create_time|date='Y-m-d H:i',###}</span>
+			<span>来源：吉林佰顺米业</span>
+		</div>
+    	<section id="contents" class="news_page_content" >{$info.content}</section>
+    </div>
+</block>
