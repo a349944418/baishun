@@ -36,7 +36,7 @@ class IndexController extends HomeController {
 
 		$huoban = D('ad')->where('type="huoban"')->order('sort')->select();
 		$this->assign('huoban', $huoban);
-
+        $this->assign('menu_act', 'index');
         $this->display();
     }
 

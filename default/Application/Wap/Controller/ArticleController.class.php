@@ -91,7 +91,7 @@ class ArticleController extends HomeController {
 			}
 		}
 		
-		
+		$this->assign('menu_act', I('get.category'));
 
 		$this->display($category['template_lists']);
 	}
@@ -134,6 +134,7 @@ class ArticleController extends HomeController {
 		$this->assign('category', $category);
 		$this->assign('info', $info);
 		$this->assign('page', $p); //页码
+		dump($tmp);
 		$this->display($tmpl);
 	}
 

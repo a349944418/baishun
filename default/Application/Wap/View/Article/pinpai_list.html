@@ -12,7 +12,7 @@
         			<img src="{$category.iconimg}" title="{$category.title}" />
         		</neq>
             </div>
-            <div class="pull-left gohistory">
+            <div class="pull-left gohistory" style="margin-top: 8px;">
                 <span style="margin-right: 6px; font-size: 19px;">|</span>
                 <foreach item="v" name="category.child">
                     <a href="{:U('Article/lists', array('category'=>$v[name]))}" class="cat_menu2 <eq name="cid" value="$v[id]">cur</eq>" >{$v.title}</a>
