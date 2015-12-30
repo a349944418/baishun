@@ -16,11 +16,18 @@
             <span class="icon icon-star"></span>
             <span class="tab-label">系列产品</span>
         </a>
-        <a class="tab-item more" href="#" onclick="show_nav_table">
+        <a class="tab-item more" href="#" onclick="show_nav_table();">
             <span class="icon icon-menu"></span>
             <span class="tab-label">更多</span>
         </a>
     </nav>
+    <div id="nav_table" style="display:none;width:25%;bottom:2.5rem;right:0;position:fixed;z-index:9999;background-color:#fff;">
+        <volist name="nav1" id="nav" offset="2" > 
+            <div style="line-height:2rem;text-align:center;height:2rem;border-top:1px solid #ccc;">
+                <a href="{$nav.url|get_nav_url}" >{$nav.title}</a>
+             </div>
+        </volist>
+    </div>
     <script>
         $(function(){
             var menu_act = '{$menu_act}';
@@ -31,5 +38,12 @@
                 $('.bar .more').addClass('active');
             }
         })
+        function show_nav_table() {
+            if ( $('#nav_table').css('display') == 'block' ) {
+                $('#nav_table').hide();
+            } else {
+                $('#nav_table').show();
+            }
+        }
     </script>
     <div class="content">
