@@ -13,20 +13,21 @@
 </block>
 
 <block name="body">
-    <style>.zbox div{display:inline-block;}</style>
+    <style>.zbox div{display:inline-block;}.zbox .news_more{color:#beb8b8;text-align: right;font-size:0.8rem;}.zbox .news{background: #fdfcfa;}.zbox .news div{height:0.8rem;margin-bottom:0.1rem;font-size:0.6rem;line-height: 0.8rem}</style>
     <div class="zbox">
         <div style="width:49%;margin-right:2%">
             <img src="/Uploads/{$news_left}" width="100%" />
         </div>
         <div style="width:47%;margin-right:2%;float:right;">
-            <ul>
+            <div class="news_more">更多...</div>
+            <div class="news">
                 <article:list name="news" category="41" row="5">
-                    <li>
-                        <a href="{:U('Article/detail?id='.$news['id'])}">{$news.title}</a>
+                    <div>
+                        <a href="{:U('Article/detail?id='.$news['id'])}">·{$news.title}</a>
                         <span class="pull-right">{$news.create_time|date='Y-m-d',###}</span>
-                    </li>
+                    </div>
                 </article:list>
-            </ul>
+            </div>
         </div>
     </div>
 </block>
