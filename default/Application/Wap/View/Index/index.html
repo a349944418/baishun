@@ -13,5 +13,19 @@
 </block>
 
 <block name="body">
-    
+    <div class="content-padded grid-demo">
+        <div class="row">
+            <div class="col-50"><img src="/Uploads/{$news_left}" width="" /></div>
+            <div class="col-50">
+                <ul>
+                    <article:list name="news" category="41" row="9">
+                        <li>
+                            <a href="{:U('Article/detail?id='.$news['id'])}">{$news.title}</a>
+                            <span class="pull-right">{$news.create_time|date='Y-m-d',###}</span>
+                        </li>
+                    </article:list>
+                </ul>
+            </div>
+        </div>
+    </div>
 </block>
