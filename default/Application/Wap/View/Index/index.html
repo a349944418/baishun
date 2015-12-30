@@ -1,16 +1,15 @@
 <extend name="Base/common"/>
 
 <block name="header">
-    <div class="content">
-        <!-- Slider -->
-        <div class="swiper-container" data-space-between='10'>
-            <div class="swiper-wrapper">
-                <foreach name="huandeng" item="vo" key="i">
-                    <div class="swiper-slide"><img src="/Uploads/{$vo.img}" alt="{$vo.title}"></div>
-                </foreach>
-            </div>
-            <div class="swiper-pagination"></div>
+    <!-- Slider -->
+    <style></style>
+    <div class="swiper-container" data-space-between='10'>
+        <div class="swiper-wrapper">
+            <foreach name="huandeng" item="vo" key="i">
+                <div class="swiper-slide"><img src="/Uploads/{$vo.img}" alt="{$vo.title}" style="width:100%"></div>
+            </foreach>
         </div>
+        <div class="swiper-pagination"></div>
     </div>
 </block>
 
