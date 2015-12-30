@@ -2,14 +2,13 @@
 
 <block name="header">
     <!-- Slider -->
-    <style></style>
-    <div class="swiper-container" data-space-between='10'>
+    <div class="swiper-container" data-space-between='10' data-speed="500" style="padding-bottom: 10px;">
         <div class="swiper-wrapper">
             <foreach name="huandeng" item="vo" key="i">
                 <div class="swiper-slide"><img src="/Uploads/{$vo.img}" alt="{$vo.title}" style="width:100%"></div>
             </foreach>
         </div>
-        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination" style="display:none"></div>
     </div>
 </block>
 
