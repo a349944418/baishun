@@ -23,7 +23,7 @@
             <volist name="list" id="data">
                 <div class="articleOne clearfix" >
                     <neq name="data.cover_id" value="0"><div class="newsleft" style="width:39%;float:left"><img src="{$data.img}" width="100%"></div></neq>
-                    <div class="newsright" <neq name="data.cover_id" value="0">style="ffloat:left;width: 60%;padding-left: 3%;"</neq> >
+                    <div class="newsright" <neq name="data.cover_id" value="0">style="float:left;width: 60%;padding-left: 3%;"</neq> >
                         <h5 class="ellipsis" style="margin:0px;"><a href="{:U('Article/detail?id='.$data['id'])}" style="color:#000;">{$data.title}</a></h5>
                         <div class="newstatus" style="font-size:0.3rem;">
                             <span>更新日期：{$data.create_time|date='Y-m-d H:i:s',###}</span>
