@@ -18,8 +18,6 @@ class IndexController extends HomeController {
 
 	//系统首页
     public function index(){
-        echo 1;
-        die();
         $category = D('Category')->getTree();
         $lists    = D('Document')->lists(null);
 
