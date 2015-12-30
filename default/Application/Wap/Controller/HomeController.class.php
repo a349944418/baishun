@@ -39,8 +39,6 @@ class HomeController extends Controller {
 
         $shoplist = D('ad')->where('type="shop"')->select();
         $this->assign('shoplist', $shoplist);
-        $erweima = D('ad')->where('type="erweima"')->getField('img');
-        $this->assign('erweima', $erweima);
     }
 
 	/* 用户登录检测 */
