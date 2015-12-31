@@ -32,7 +32,10 @@ class HomeController extends Controller {
         }
 
         $nav = D('Channel')->lists();
-        $this->assign('nav1', $nav);
+        $nav1 = $nav;
+        unset($nav1[0], $nav1[1], $nav1[2]);
+        krsort($nav1);
+        $this->assign('nav1', $nav1);
 
         $friendlink = D('friendlink')->order('sort')->select();
         $this->assign('friendlink', $friendlink);
