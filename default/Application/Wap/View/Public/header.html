@@ -25,7 +25,7 @@
         <volist name="nav1" id="nav" offset="2" > 
             <div style="line-height:2rem;text-align:center;height:2rem;border-top:1px solid #ccc;">
                 <a href="{$nav.url|get_nav_url}" >{$nav.title}</a>
-             </div>
+            </div>
         </volist>
     </div>
     <script>
@@ -39,6 +39,7 @@
             }
         })
         function show_nav_table() {
+            alert(1);
             if ( $('#nav_table').css('display') == 'block' ) {
                 $('#nav_table').hide();
             } else {
