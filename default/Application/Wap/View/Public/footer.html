@@ -1,6 +1,6 @@
 	</div>
 </div>
-<style>.news_page_title .pull-left img {width:158px; height:43px;}</style>
+<style>.news_page_title .pull-left img ,.news_page_title img{width:158px; height:43px;}</style>
 <div id="nav_table" style="display:none;width:25%;bottom:2.5rem;right:0;position:fixed;z-index:9999;">
     <volist name="nav1" id="nav" offset="2" > 
         <div style="line-height:2rem;text-align:center;height:2rem;margin-top:1px;background-color:#fff;">
@@ -21,6 +21,7 @@
     }
     function hidden_nav_table(obj) {
     	$(obj).css({"color":"#c70a1e"});
+    	$(obj).parent().siblings().find('a').css({'color':'#929292'});
     	$('#nav_table').hide();
     }
 </script>
