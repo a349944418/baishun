@@ -32,6 +32,7 @@ class HomeController extends Controller {
         }
 
         $nav1 = $nav = D('Channel')->lists();
+        dump($nav);
         rsort($nav1);
         dump($nav1);
         $nav1 = array_slice($nav1,3);
