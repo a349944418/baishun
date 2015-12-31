@@ -90,8 +90,7 @@ class ArticleController extends HomeController {
 				$this->assign('list', $list);
 			}
 		}
-		
-		$this->assign('menu_act', I('get.category'));
+		$this->assign('menu_act', $category['name']);
 
 		$this->display($category['template_lists']);
 	}
