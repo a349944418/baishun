@@ -31,9 +31,9 @@ class HomeController extends Controller {
             $this->error('站点已经关闭，请稍后访问~');
         }
 
-        $nav = D('Channel')->lists();
-        $nav1 = $nav;
+        $nav1 = $nav = D('Channel')->lists();
         krsort($nav1);
+        $nav1 = array_slice($nav1,3);
         dump($nav1);
         $this->assign('nav1', $nav1);
 
