@@ -2,11 +2,11 @@
 </div>
 <style>.news_page_title .pull-left img ,.news_page_title img{width:158px; height:43px;}</style>
 <div id="nav_table" style="display:none;width:25%;bottom:2.5rem;right:0;position:fixed;z-index:9999;">
-	<div style="line-height:2rem;text-align:center;height:2rem;background-color:#fff;">
+	<div style="line-height:2.3rem;text-align:center;height:2.3rem;margin-bottom:1px;background-color:#fff;">
         <a href="{:C('WEB_SHOP')}" style="color:#929292;" onclick="hidden_nav_table(this);">在线商城</a>
     </div>
     <volist name="nav1" id="nav" > 
-        <div style="line-height:2rem;text-align:center;height:2rem;margin-top:1px;background-color:#fff;">
+        <div style="line-height:2.3rem;text-align:center;height:2.3rem;margin-bottom:1px;background-color:#fff;">
             <a href="{$nav.url|get_nav_url}" style="color:#929292;" onclick="hidden_nav_table(this);">{$nav.title}</a>
         </div>
     </volist>
