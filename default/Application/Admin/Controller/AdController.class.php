@@ -25,7 +25,15 @@ class AdController extends AdminController
 		$this->assign('type', 'huandeng');
 		$this->display('list');
 	}
-
+	
+	public function waphuandeng() 
+	{
+		$list = $this->getlist('waphuandeng');
+		$this->assign('title', '手机端幻灯片');
+		$this->assign('list', $list);
+		$this->assign('type', 'waphuandeng');
+		$this->display('list');
+	}
 
 	public function getlist($type)
 	{
@@ -35,7 +43,7 @@ class AdController extends AdminController
 
 	public function add()
 	{
-		$name = array('huandeng'=>'首页幻灯片','shop'=>'在线商城下拉');
+		$name = array('huandeng'=>'首页幻灯片','shop'=>'在线商城下拉','waphuandeng'=>'手机端幻灯片');
 		$type = I('get.type');
 		$type_name = $name[$type];
 		$this->assign('type_name', $type_name);
