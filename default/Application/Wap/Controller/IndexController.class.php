@@ -25,7 +25,7 @@ class IndexController extends HomeController {
         $this->assign('lists',$lists);//列表
         $this->assign('page',D('Document')->page);//分页
 
-        $huandeng = D('ad')->where('type="huandeng"')->select();
+        $huandeng = D('ad')->where('type="waphuandeng"')->select();
         $this->assign('huandeng', $huandeng);
         $news_left = D('ad')->where('type="pic1"')->getField('img');
         $this->assign('news_left', $news_left);

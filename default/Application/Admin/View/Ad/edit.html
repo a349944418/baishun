@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<div class="form-item">
-			<label class="item-label">上传图片 <span class="check-tips"></span> (图片尺寸：<if condition="$type eq 'huandeng'">1920*500<else/><eq name="type" value="goodsback">1920*294</eq><eq name="type" value="good">207*207</eq><eq name="type" value="huoban">位置3,8：194*160，其余：160*160</eq><eq name="type" value="shop">164*164</eq></if>，图片最大不超过1M)</label>
+			<label class="item-label">上传图片 <span class="check-tips"></span> (图片尺寸：<if condition="$type eq 'huandeng'">1920*500<else/><eq name="type" value="goodsback">1920*294</eq><eq name="type" value="good">207*207</eq><eq name="type" value="waphuandeng">750*334</eq><eq name="type" value="huoban">位置3,8：194*160，其余：160*160</eq><eq name="type" value="shop">164*164</eq></if>，图片最大不超过1M)</label>
 			<div class="controls">
 				<input type="file" id="file1" name="file"><br />
 				<img id="img1" src="/Uploads/{$info.img}" <if condition="$info[img] eq ''">style="display:none"</if> />
